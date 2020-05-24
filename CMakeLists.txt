@@ -1,15 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
+project(app)
 
-project(app
-)
-
-if( NOT DEFINED CMAKE_CXX_STANDARD)
-	set(CMAKE_CXX_STANDARD 14)
-endif()
-
-set(CMAKE_CXX_STANDARD_REQUIRED YES)
-set(CMAKE_CXX_EXTENSIONS NO)
-
-set(CMAKE_INTERPROCEDURAL_OPTIMIZATION OFF)
 
 add_subdirectory(src)
