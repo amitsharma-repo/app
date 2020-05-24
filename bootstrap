@@ -30,12 +30,13 @@ if ${toolchain}; then
 	if [ ! -f "${toolchain_file}" ]; then
 		die "Toolchain file ${toolchain_file} missiong . Please verify your directory"
 	fi
-	toolchian_file="-DCMAKE_TOOLCHAIN_FILE=${toolchain_file}"
+	toolchain_file="-DCMAKE_TOOLCHAIN_FILE=${toolchain_file}"
 fi
 
 echo "bootstraping ...."
+
+echo cmake -S ${src_dir} -B ${build_dir} ${generator} ${toolchain_file} 
 cmake -S ${src_dir} -B ${build_dir} ${generator} ${toolchain_file} 
-#cd build
 #cmake ../ ${toolchain_file}
 #cmake -S ${src_dir} -B ${build_dir}
 
