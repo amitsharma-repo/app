@@ -9,3 +9,6 @@ add_executable(
 	feature_app
 	feature_app.cpp
 	)	
+install(TARGETS feature_app
+    DESTINATION ${CMAKE_INSTALL_PREFIX}
+    )
