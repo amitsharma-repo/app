@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.13)
 project(app
 	LANGUAGES C CXX)
+include(cmake/project_Setting.cmake)
+
 if (NOT DEFINED CMAKE_CXX_STANDARD)
 	set(CMAKE_CXX_STANDARD 17)
 endif()
