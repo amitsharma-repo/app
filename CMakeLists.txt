@@ -17,3 +17,5 @@ set(home_root /home/ultimatepandit/Project_SRC/practice_zone/app)
 set(CMAKE_INSTALL_PREFIX ${home_root}/build/install)
 
 add_subdirectory(src)
+add_subdirectory(dependencies)
+
