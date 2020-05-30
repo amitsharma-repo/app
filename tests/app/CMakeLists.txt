@@ -5,8 +5,8 @@ find_package(Threads REQUIRED)
 add_Executable(test_sample test_sample.cpp)
 target_include_directories(test_sample
     PUBLIC
-    ../src/testMain
-    ../include
+    ${CORE}/src/testMain
+    /home/ultimatepandit/Project_SRC/practice_zone/core/include
     )   
 target_link_libraries(test_sample
 	PRIVATE

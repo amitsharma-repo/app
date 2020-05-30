@@ -17,7 +17,7 @@ set(CMAKE_CXX_EXTENSIONS NO)
 option(BUILD_SHARED_LIBS
 	"build all libarry as shared libraries instead of static" ON)
 
-
+set(CORE /home/ultimatepandit/Project_SRC/practice_zone/core)
 option(TEST_APP "Enable APP unit tests" ON)
 if(TEST_APP OR CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
 	set(TEST_APP ON CACHE BOOL "Enable app unit tests" FORCE)
