@@ -19,20 +19,20 @@ std::tuple<int,int> find_smallest_range( int nList_cnt, list** pplist_collection
     for ( int idx = 0; idx < nList_cnt; ++idx)
     {
         current_Heap.push_back(pplist_collection[idx]);
-        if(pplist_collection[idx]->nValue  > n_max)
-            n_max = pplist_collection[idx]->nValue ;
+        if(pplist_collection[idx]->nValue_  > n_max)
+            n_max = pplist_collection[idx]->nValue_ ;
     }
     std::make_heap(current_Heap.begin(), current_Heap.end(), [](list* x, list* y){
-        return x->nValue  < y->nValue ; } );
+        return x->nValue_  < y->nValue_ ; } );
     while(1)
     {
         //find minimum from the heap
         std::pop_heap(current_Heap.begin(), current_Heap.end());
         list* pMinList = current_Heap.back();
         current_Heap.pop_back();
-        if(pMinList->pNxt == nullptr)
+        if(pMinList->pNxt_ == nullptr)
             break;
-        list* element = pMinList->pNxt;
+        list* element = pMinList->pNxt_;
         //adding element in heap
         current_Heap.push_back(element);
         //hippifying the heap with new element added at the back
@@ -40,13 +40,13 @@ std::tuple<int,int> find_smallest_range( int nList_cnt, list** pplist_collection
         //updating new minimum element
         pMinList = current_Heap.front();
         //upating elment_value to new arr_number
-        if(element->nValue  > n_max) {
-            n_max = element->nValue ;
+        if(element->nValue_  > n_max) {
+            n_max = element->nValue_ ;
         }
         //update min of the new heap
-         if((n_max -pMinList->nValue )  < nDiff_result) {
-            nDiff_result = n_max - pMinList->nValue ;
-            nStartIdx = pMinList->nValue ;
+         if((n_max -pMinList->nValue_ )  < nDiff_result) {
+            nDiff_result = n_max - pMinList->nValue_ ;
+            nStartIdx = pMinList->nValue_ ;
             nEndIndex = n_max;
          }
     }
