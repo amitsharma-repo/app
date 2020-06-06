@@ -9,7 +9,7 @@
 //namespace app
 //{
 //input list is zagged array of list
-std::tuple<int,int> find_smallest_rangle( int nList_cnt, list** pplist_collection)
+std::tuple<int,int> find_smallest_range( int nList_cnt, list** pplist_collection)
 {
     std::vector<list*> current_Heap;
     unsigned int nStartIdx, nEndIndex;
