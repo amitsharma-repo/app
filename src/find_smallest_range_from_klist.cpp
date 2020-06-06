@@ -1,4 +1,4 @@
-#include<app/find_smallest_range_from_klist.h>
+#include<find_smallest_range_from_klist.h>
 #include<algorithm>
 #include <c++/7/bits/c++config.h>
 #include <cstdio>
@@ -6,8 +6,8 @@
 #include<map>
 
 #include<iostream>
-namespace app
-{
+//namespace app
+//{
 //input list is zagged array of list
 std::tuple<int,int> find_smallest_rangle( int nList_cnt, list** pplist_collection)
 {
@@ -54,4 +54,4 @@ std::tuple<int,int> find_smallest_rangle( int nList_cnt, list** pplist_collectio
     return {nStartIdx, nEndIndex};
 }
 
-}
+//}
