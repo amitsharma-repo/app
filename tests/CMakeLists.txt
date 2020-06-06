@@ -17,7 +17,7 @@ target_include_directories(test_app_lib
 target_link_libraries(test_app_lib
     PUBLIC
 	core::framework_test
-    App_lib
+    geeks_solver 
     core
 	Threads::Threads
 	)	
