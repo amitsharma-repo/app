@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0)
 set(CMAKE_BUID_TYPE Debug)
 set(CMAKE_CXX_FLAGS "-std=c++14")
 set(CMAKE_VERBOSE_MAKEFILE ON)
-project(app_exe)
+project(application)
 
 #adding executable as feature_app
 add_executable(feature_app
