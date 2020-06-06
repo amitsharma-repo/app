@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 #include <vector>
 #include <algorithm>
 #include <queue>
@@ -36,6 +37,20 @@ class Vertex
             }
         }
 
+        const std::vector<const Vertex*>* getNeigbours()
+        {
+            return &m_Neibours;
+        }
+
+        void setVisited(bool p_IsVisted)
+        {
+            m_bVisted = p_IsVisted;
+        }
+
+        bool isVisited()
+        {
+            return m_bVisted;
+        }
     private:
         int m_Value;
         bool m_bVisted = false;
@@ -53,6 +68,7 @@ class Graph
             l_To->addNebiuour(l_From);
             return false;
         }
+
         void printGraph()
         {
             for(int i=0; i<m_Vertices.size(); i++)
@@ -62,6 +78,23 @@ class Graph
                 std::cout<<std::endl;
             }
         }
+
+        void addNebiuoursToQueue(std::queue<Vertex*> *p_Queue, Vertex* p_Vertex)
+        {
+            auto l_nbrs = p_Vertex->getNeigbours();
+            auto l_itr = l_nbrs->begin();
+            while(l_itr != l_nbrs->end())
+            {
+                Vertex* l_tmpV = const_cast<Vertex*>(*l_itr);
+                if(l_tmpV->isVisited() == false)
+                {
+                    l_tmpV->setVisited(true);
+                    p_Queue->push( l_tmpV );
+                    l_itr++;
+                }
+           }
+        }
+
         std::vector<int> doBFT(int p_iStartIdx)
         {
             std::vector<int> l_vecBFTSeq;
@@ -70,12 +103,28 @@ class Graph
             {
                 return l_vecBFTSeq;
             }
-            std::queu
-
+            std::cout<<"BFT from ::"<<l_Vertex->getValue()<<" ";
+            std::queue<Vertex*> l_bftHeleprQueu;
+            l_Vertex->setVisited(true);
+            addNebiuoursToQueue( &l_bftHeleprQueu, l_Vertex);
+            while( false == l_bftHeleprQueu.empty())
+            {
+                auto l_vtx = l_bftHeleprQueu.front();
+                l_bftHeleprQueu.pop();
+                if( l_vtx->isVisited() == false) 
+                {
+                    l_vtx->setVisited(true);
+                    std::cout<<"::"<<l_vtx->getValue()<<" ";
+                    addNebiuoursToQueue( &l_bftHeleprQueu, l_vtx);
+                }
+            }
+            std::cout<<"DONE"<<std::endl;
             return l_vecBFTSeq;
         }
+
         void doDFS()
         {
+
         }
     private: 
         Vertex* addVertex(int p_Value)
@@ -110,17 +159,18 @@ class Graph
 
         std::vector<Vertex*> m_Vertices;
 };
-int main()
-{
-    Graph l_Grph; 
-    l_Grph.addEdge( 0, 1);
-    l_Grph.addEdge( 0, 1);
-    l_Grph.addEdge( 0, 4); 
-    l_Grph.addEdge( 1, 2); 
-    l_Grph.addEdge( 1, 3); 
-    l_Grph.addEdge( 1, 4); 
-    l_Grph.addEdge( 2, 3); 
-    l_Grph.addEdge( 3, 4); 
-    l_Grph.printGraph();
-    return 0;
-}
+//int main()
+//{
+//    Graph l_Grph; 
+//    l_Grph.addEdge( 0, 1);
+//    l_Grph.addEdge( 0, 1);
+//    l_Grph.addEdge( 0, 4); 
+//    l_Grph.addEdge( 1, 2); 
+//    l_Grph.addEdge( 1, 3); 
+//    l_Grph.addEdge( 1, 4); 
+//    l_Grph.addEdge( 2, 3); 
+//    l_Grph.addEdge( 3, 4); 
+//    l_Grph.printGraph();
+//    l_Grph.doBFT(0);
+//    return 0;
+//}
