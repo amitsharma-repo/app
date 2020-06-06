@@ -12,11 +12,10 @@ add_executable(feature_app
 target_include_directories(feature_app
       PUBLIC
       ${CORE_DIR}/include
-      ${APP_DIR}/include
+      ${CMAKE_CURRENT_SOURCE_DIR} ../../include 
       )
 target_link_libraries(feature_app
      PRIVATE
-     core
      )
  install(TARGETS feature_app 
      DESTINATION ${CMAKE_INSTALL_PREFIX}
