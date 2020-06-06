@@ -1,0 +1,5 @@
+FetchContent_GetProperties(core)
+if(NOT core_POPULATED)
+	FetchContent_Populate(Core)
+	add_subdirectory(${core_SOURCE_DIR} ${core_BINARY_DIR} )
+endif()
