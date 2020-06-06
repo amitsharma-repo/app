@@ -1,2 +1,2 @@
-add_subdirectory(exe)
-add_subdirectory(lib)
+add_subdirectory(application)
+add_subdirectory(geeks_solver)
