@@ -16,6 +16,7 @@ target_include_directories(application
       )
 target_link_libraries(application
      PRIVATE
+     geeks_solver
      )
  install(TARGETS application
      DESTINATION ${CMAKE_INSTALL_PREFIX}
