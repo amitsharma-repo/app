@@ -1,8 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
-<<<<<<< HEAD
 set(CMAKE_VERBOSE_MAKEFILE ON)
-project(app)
-=======
 project(app
 	LANGUAGES C CXX)
 
@@ -24,8 +21,6 @@ option(BUILD_SHARED_LIBS
 option(TEST_APP "Enable APP unit tests" ON)
 option(USE_GOOGLE_TEST "Enable Google tests" OFF)                               
 set(CMAKE_VERBOSE_MAKEFILE ON)
->>>>>>> df3f32e288a3ead4a15224c66437b7954277919b
-set(CMAKE_CXX_STANDARD 17)
 
 set(CORE_DIR /home/ultimatepandit/Project_SRC/practice_zone/core)
 set(APP_DIR /home/ultimatepandit/Project_SRC/practice_zone/app) 

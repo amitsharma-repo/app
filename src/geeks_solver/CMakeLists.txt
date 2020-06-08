@@ -7,7 +7,7 @@ project(geeks_solver)
 
 
  #adding libarry as libApp
- add_library(geeks_solver STATIC find_smallest_range_from_klist.cpp)
+ add_library(geeks_solver STATIC find_smallest_range_from_klist.cpp shortest_reach.cpp)
  target_link_libraries(geeks_solver
      PRIVATE
          core
