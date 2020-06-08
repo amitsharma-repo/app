@@ -90,9 +90,10 @@ class Graph
                 {
                     l_tmpV->setVisited(true);
                     p_Queue->push( l_tmpV );
-                    l_itr++;
+                    std::cout<<"::"<<l_tmpV->getValue()<<" ";
                 }
-           }
+                l_itr++;
+            }
         }
 
         std::vector<int> doBFT(int p_iStartIdx)
@@ -111,12 +112,7 @@ class Graph
             {
                 auto l_vtx = l_bftHeleprQueu.front();
                 l_bftHeleprQueu.pop();
-                if( l_vtx->isVisited() == false) 
-                {
-                    l_vtx->setVisited(true);
-                    std::cout<<"::"<<l_vtx->getValue()<<" ";
-                    addNebiuoursToQueue( &l_bftHeleprQueu, l_vtx);
-                }
+                addNebiuoursToQueue( &l_bftHeleprQueu, l_vtx);
             }
             std::cout<<"DONE"<<std::endl;
             return l_vecBFTSeq;
@@ -157,20 +153,21 @@ class Graph
             return nullptr;
         }
 
-        std::vector<Vertex*> m_Vertices;
+        std::vector<Vertex*> m_Vertices; //USE MAP HERE
+
 };
-//int main()
-//{
-//    Graph l_Grph; 
-//    l_Grph.addEdge( 0, 1);
-//    l_Grph.addEdge( 0, 1);
-//    l_Grph.addEdge( 0, 4); 
-//    l_Grph.addEdge( 1, 2); 
-//    l_Grph.addEdge( 1, 3); 
-//    l_Grph.addEdge( 1, 4); 
-//    l_Grph.addEdge( 2, 3); 
-//    l_Grph.addEdge( 3, 4); 
-//    l_Grph.printGraph();
-//    l_Grph.doBFT(0);
-//    return 0;
-//}
+int main()
+{
+    Graph l_Grph; 
+    l_Grph.addEdge( 0, 1);
+    l_Grph.addEdge( 0, 1);
+    l_Grph.addEdge( 0, 4); 
+    l_Grph.addEdge( 1, 2); 
+    l_Grph.addEdge( 1, 3); 
+    l_Grph.addEdge( 1, 4); 
+    l_Grph.addEdge( 2, 3); 
+    l_Grph.addEdge( 3, 4); 
+    l_Grph.printGraph();
+    l_Grph.doBFT(1);
+    return 0;
+}
