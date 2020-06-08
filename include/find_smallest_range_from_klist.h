@@ -1,10 +1,10 @@
 #include<iostream> 
 #include<vector> 
-struct list
+struct List
 {
     int nValue_;
-    list* pNxt_; 
-    list(int nValue, list* pNxt = nullptr): nValue_(nValue),pNxt_(pNxt)
+    List* pNxt_; 
+    List(int nValue, List* pNxt = nullptr): nValue_(nValue),pNxt_(pNxt)
     {}
 };
-std::tuple<int,int> find_smallest_range( int nList_cnt, list** pplist_collection);
+std::tuple<int,int> find_smallest_range( int nList_cnt, List** pplist_collection);

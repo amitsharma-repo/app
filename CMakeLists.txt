@@ -22,7 +22,7 @@ option(BUILD_SHARED_LIBS
 	"build all libarry as shared libraries instead of static" ON)
 
 option(TEST_APP "Enable APP unit tests" ON)
-
+option(USE_GOOGLE_TEST "Enable Google tests" OFF)                               
 set(CMAKE_VERBOSE_MAKEFILE ON)
 >>>>>>> df3f32e288a3ead4a15224c66437b7954277919b
 set(CMAKE_CXX_STANDARD 17)

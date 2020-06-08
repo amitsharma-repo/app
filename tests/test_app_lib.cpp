@@ -1,26 +1,36 @@
+#include<tuple>
 #include<find_smallest_range_from_klist.h>
 #include<iostream>
 #include<TestMain.cpp>
-
+// BOOST_AUTO_TEST_SUITE(foo_suite)                                                
+                                                                                 
+//     BOOST_AUTO_TEST_CASE(constructor_test)                                      
+//     {                                                                           
+//         int nShared_res = 0;                                                             
+                                                                                 
+//         BOOST_CHECK_EQUAL(nShared_res, 0);                                
+//     }                                                                           
+                                                                                 
+// BOOST_AUTO_TEST_SUITE_END() 
 TEST(test_1, sample)
 {
 	 int nShared_res = 0;
-     EXPECT_EQ(6 , nShared_res);
+     BOOST_CHECK_EQUAL(0 , nShared_res);
 
 }
 
-list* create_link_list(const std::vector<int>& vec_data)
+List* create_link_list(const std::vector<int>& vec_data)
 {
-    list *pList , *pStart;
+    List *pList , *pStart;
     pList = pStart = nullptr;
 
     for_each( vec_data.begin(), vec_data.end(), [ & ](int nData){
             if( pList == nullptr) {
-                pList = new list( nData );
+                pList = new List( nData );
                 pStart = pList;
             }
             else {
-                pList->pNxt_ = new list( nData );
+                pList->pNxt_ = new List( nData );
                 pList = pList->pNxt_;
             }
             });
@@ -29,14 +39,15 @@ list* create_link_list(const std::vector<int>& vec_data)
 
 TEST(test_smallest_rangle, smallest_range)
 {
-    list **ppList = new list*[4];
-    ppList[0]   = create_link_list( {2, 6, 7, 23, 56} );
-    ppList[1]   = create_link_list( {3, 9, 40, 46, 34} );
-    ppList[2]   = create_link_list( {56, 234, 563, 665, 786} );
-    ppList[3]   = create_link_list( {6, 8, 12, 34, 76} ); 
+    List **ppList = new List*[4];
+    ppList[0]   = create_link_list( {4, 7, 9, 12, 15} );
+    ppList[1]   = create_link_list( {0, 8 ,10 , 14 , 20} );
+    ppList[2]   = create_link_list( {6 ,12 ,16, 30 , 50} );
     
-    std::tuple<int,int> range= find_smallest_range(4, ppList);
-    EXPECT_EQ(get<0>(range), 3);
-    EXPECT_EQ(get<1>(range), 5);
+  auto range= find_smallest_range(3, ppList);
+    int nStartIdx = std::get<0>(range);
+    int nEndIdx = std::get<1>(range); 
+    BOOST_CHECK_EQUAL(std::get<0>(range), 6);
+    BOOST_CHECK_EQUAL(std::get<1>(range), 8);
 }
 
