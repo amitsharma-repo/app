@@ -32,6 +32,18 @@ target_link_libraries(shortest_reach_app
      geeks_solver
      )
 
+ add_executable(graph_app
+	graph_app.cpp
+	)
+target_include_directories(graph_app
+      PUBLIC
+      ${CORE_DIR}/include
+      ${CMAKE_CURRENT_SOURCE_DIR} ../../include 
+      )
+ install(TARGETS graph_app
+     DESTINATION ${CMAKE_INSTALL_PREFIX}
+     )
+ 
  install(TARGETS shortest_reach_app
      DESTINATION ${CMAKE_INSTALL_PREFIX}
      )
