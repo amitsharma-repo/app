@@ -44,7 +44,7 @@ std::tuple<int,int> find_smallest_range( int nList_cnt, List** pplist_collection
         //adding element in heap
         current_Heap.push_back(element);
         //hippifying the heap with new element added at the back
-        std::push_heap(current_Heap.begin(), current_Heap.end(), [](List* x, List* y){
+        std::make_heap(current_Heap.begin(), current_Heap.end(), [](List* x, List* y){
                return x->nValue_ > y->nValue_; } );
  
         //updating new minimum element
