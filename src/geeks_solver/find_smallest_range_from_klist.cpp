@@ -30,10 +30,10 @@ std::tuple<int,int> find_smallest_range( int nList_cnt, List** pplist_collection
     while(1)
     {
         
-//        std::cout << " min element value " << pMinList->nValue_ <<std::endl;
-//        std::for_each(current_Heap.begin(), current_Heap.end(), [](List* pList){
-//                std::cout << "heap data is " << pList->nValue_<< std::endl;
-//                });
+        std::cout << " min element value " << pMinList->nValue_ <<std::endl;
+        std::for_each(current_Heap.begin(), current_Heap.end(), [](List* pList){
+                std::cout << "heap data is " << pList->nValue_<< std::endl;
+                });
         //removing min element
         std::pop_heap(current_Heap.begin(), current_Heap.end());
         current_Heap.pop_back();
@@ -44,7 +44,7 @@ std::tuple<int,int> find_smallest_range( int nList_cnt, List** pplist_collection
         //adding element in heap
         current_Heap.push_back(element);
         //hippifying the heap with new element added at the back
-        std::make_heap(current_Heap.begin(), current_Heap.end(), [](List* x, List* y){
+        std::push_heap(current_Heap.begin(), current_Heap.end(), [](List* x, List* y){
                return x->nValue_ > y->nValue_; } );
  
         //updating new minimum element
