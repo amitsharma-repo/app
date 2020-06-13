@@ -22,14 +22,14 @@ option(TEST_APP "Enable APP unit tests" ON)
 option(USE_GOOGLE_TEST "Enable Google tests" OFF)                               
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
-set(CORE_DIR /home/ultimatepandit/Project_SRC/practice_zone/core)
-set(APP_DIR /home/ultimatepandit/Project_SRC/practice_zone/app) 
+set(CORE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../core)
+set(APP_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../app)
 set(CMAKE_INSTALL_PREFIX ${APP_DIR}/build/install)
 if(TEST_APP OR CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
      set(TEST_APP ON CACHE BOOL "Enable app unit tests" FORCE)
-     add_subdirectory(tests)
+     #     add_subdirectory(tests)
 endif()
 
 add_subdirectory(src)
-add_subdirectory(dependencies)
+#add_subdirectory(dependencies)
 
