@@ -27,9 +27,9 @@ set(APP_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../app)
 set(CMAKE_INSTALL_PREFIX ${APP_DIR}/build/install)
 if(TEST_APP OR CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
      set(TEST_APP ON CACHE BOOL "Enable app unit tests" FORCE)
-     #     add_subdirectory(tests)
+     add_subdirectory(tests)
 endif()
 
 add_subdirectory(src)
-#add_subdirectory(dependencies)
+add_subdirectory(dependencies)
 
