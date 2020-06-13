@@ -1,5 +1,6 @@
 #include<tuple>
 #include<find_smallest_range_from_klist.h>
+#include<find_first_in_rotated_sorted_arr.h>
 #include<iostream>
 #include<TestMain.cpp>
 // BOOST_AUTO_TEST_SUITE(foo_suite)                                                
@@ -37,7 +38,7 @@ List* create_link_list(const std::vector<int>& vec_data)
     return pStart;
 }
 
-TEST(test_smallest_rangle, smallest_range)
+TEST( test_smallest_rangle, smallest_range )
 {
     List **ppList = new List*[4];
     ppList[0]   = create_link_list( {4, 7, 9, 12, 15} );
@@ -51,3 +52,10 @@ TEST(test_smallest_rangle, smallest_range)
     BOOST_CHECK_EQUAL(std::get<1>(range), 8);
 }
 
+TEST( test_first_in_rotated_sorted_arr, find_first )
+{
+    int arr[] = {45, 56, 78, 89, 92 , 97, 4, 6, 12 , 33, 40};
+    int n_index = find_first_in_rotated_sorted_array( arr, 11 );
+    BOOST_CHECK_EQUAL( arr[n_index], 4 );
+        
+}

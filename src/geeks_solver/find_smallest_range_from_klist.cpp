@@ -1,7 +1,6 @@
 #include<algorithm>
 #include<find_smallest_range_from_klist.h>
 #include<algorithm>
-#include <c++/7/bits/c++config.h>
 #include <cstdio>
 #include<vector>
 #include<map>
@@ -30,10 +29,11 @@ std::tuple<int,int> find_smallest_range( int nList_cnt, List** pplist_collection
     while(1)
     {
         
-        std::cout << " min element value " << pMinList->nValue_ <<std::endl;
+        /*std::cout << " min element value " << pMinList->nValue_ <<std::endl;
         std::for_each(current_Heap.begin(), current_Heap.end(), [](List* pList){
                 std::cout << "heap data is " << pList->nValue_<< std::endl;
                 });
+        */
         //removing min element
         std::pop_heap(current_Heap.begin(), current_Heap.end());
         current_Heap.pop_back();
@@ -58,7 +58,7 @@ std::tuple<int,int> find_smallest_range( int nList_cnt, List** pplist_collection
             nDiff_result = n_max - pMinList->nValue_ ;
             nStartIdx = pMinList->nValue_ ;
             nEndIndex = n_max;
-            std::cout << "min_elemt is " << nStartIdx << " max element is "<< nEndIndex << " diffence is " << nDiff_result << std::endl;
+            //std::cout << "min_elemt is " << nStartIdx << " max element is "<< nEndIndex << " diffence is " << nDiff_result << std::endl;
          }
     }
         
