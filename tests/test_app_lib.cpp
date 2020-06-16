@@ -1,4 +1,6 @@
+#pragma once
 #include<tuple>
+#include<level_order_spiral_traversal.h>
 #include<find_smallest_range_from_klist.h>
 #include<find_first_in_rotated_sorted_arr.h>
 #include<iostream>
@@ -58,4 +60,17 @@ TEST( test_first_in_rotated_sorted_arr, find_first )
     int n_index = find_first_in_rotated_sorted_array( arr, 11 );
     BOOST_CHECK_EQUAL( arr[n_index], 4 );
         
+}
+
+
+TEST( test_level_order_spiral_traversal, spiral_traversal )
+{
+    std::vector<int> vec_tree_data {3, 43, 53, 64, 66, 5, 6};
+
+//    std::vector<int> vec_tree_data {3, 45,9,12,78,87,99, 43, 53, 64, 66, 5, 6};
+    Node* pNode = create_binary_tree( vec_tree_data );
+    Display_tree( pNode ); 
+    std::string spiral_traversal;
+    level_order_spiral_traversal( pNode, spiral_traversal );
+    BOOST_CHECK_EQUAL( spiral_traversal, std::string("3 53 43 64 6 5 66") ); 
 }
