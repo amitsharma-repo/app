@@ -11,6 +11,7 @@ project(geeks_solver)
      find_smallest_range_from_klist.cpp 
      shortest_reach.cpp
      find_first_in_rotated_sorted_arr.cpp 
+     level_order_spiral_traversal.cpp
      )
  target_link_libraries(geeks_solver
      PRIVATE
