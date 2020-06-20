@@ -56,7 +56,21 @@ int get_height( Node* pNode )
     nHeight = n_left_height > n_right_height ? n_left_height +1 : n_right_height + 1;
     return nHeight ;                                                             
 }                                                                                
+void prettyPrintTree(Node* node, std::string prefix, bool isLeft) {
+    if (node == nullptr) {
+        std::cout << "Empty tree";
+        return;
+    }
 
+    if(node->p_right) {
+        prettyPrintTree(node->p_right, prefix + (isLeft ? "│   " : "    "), false);
+    }
+    std::cout << prefix + (isLeft ? "└── " : "┌── ") + std::to_string(node->n_info) + "\n";
+
+    if (node->p_left) {
+        prettyPrintTree(node->p_left, prefix + (isLeft ? "    " : "│   "), true);
+    }
+}
 void print_level( Node* p_node, int n_level, int n_spacer, int n_current_level )
 {   
     if(n_current_level == -1)

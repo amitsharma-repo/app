@@ -25,4 +25,4 @@ Node* create_binary_tree( std::vector<int> tree_data);
 int get_height( Node* pNode );
 void print_level( Node* p_node, int n_level, int n_spacer, int n_current_level = -1 );
 Node* Display_tree( Node* pNode );                                               
-
+void prettyPrintTree(Node* node, std::string prefix = "", bool isLeft = true); 
