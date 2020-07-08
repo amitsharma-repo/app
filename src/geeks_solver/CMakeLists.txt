@@ -8,6 +8,8 @@ project(geeks_solver)
 
  #adding libarry as libApp
  add_library(geeks_solver STATIC 
+     utils.cpp
+     delete_node_with_greater_on_right.cpp
      find_duplicate_in_n_time.cpp
      find_smallest_range_from_klist.cpp 
      shortest_reach.cpp
