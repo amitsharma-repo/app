@@ -1,6 +1,7 @@
 #include<tuple>
 #include<vector>
 #include<find_smallest_range_from_klist.h>
+#include<util_struct.h>
 #include<algorithm>
 #include<iostream>
 using namespace std;
@@ -15,8 +16,8 @@ List* create_link_List(const std::vector<int>& vec_data)
                 pStart = pList;
             }
             else {
-                pList->pNxt_ = new List( nData );
-                pList = pList->pNxt_;
+                pList->p_next_= new List( nData );
+                pList = pList->p_next_;
             }
    });
     return pStart;

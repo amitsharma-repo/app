@@ -5,8 +5,13 @@
 #include<find_first_in_rotated_sorted_arr.h>
 #include<find_min_number_from_given_sequence.h>
 #include<find_duplicate_in_n_time.h>
+#include<delete_node_with_greater_on_right.h>
 #include<iostream>
 #include<TestMain.cpp>
+#include<util_struct.h>
+
+
+
 // BOOST_AUTO_TEST_SUITE(foo_suite)                                                
                                                                                  
 //     BOOST_AUTO_TEST_CASE(constructor_test)                                      
@@ -17,32 +22,33 @@
 //     }                                                                           
                                                                                  
 // BOOST_AUTO_TEST_SUITE_END() 
-TEST(test_1, sample)
+
+bool test_link_list( const List* p_result, const std::vector<int>&& vec_result)
+{
+    bool b_result = true;;
+    auto iter = vec_result.begin();
+    while( b_result && iter != vec_result.end() )
+    {
+        if( p_result == nullptr) {
+            b_result = false;
+            break;
+        }
+        if( *iter != p_result->n_value_ )
+            b_result = false;
+        BOOST_CHECK_EQUAL( *iter, p_result->n_value_);
+        p_result = p_result->p_next_; 
+        iter++; 
+    }
+    return b_result;
+}
+
+TEST( test_geeks_solver, sample)
 {
 	 int nShared_res = 0;
      BOOST_CHECK_EQUAL(0 , nShared_res);
-
 }
 
-List* create_link_list(const std::vector<int>& vec_data)
-{
-    List *pList , *pStart;
-    pList = pStart = nullptr;
-
-    for_each( vec_data.begin(), vec_data.end(), [ & ](int nData){
-            if( pList == nullptr) {
-                pList = new List( nData );
-                pStart = pList;
-            }
-            else {
-                pList->pNxt_ = new List( nData );
-                pList = pList->pNxt_;
-            }
-            });
-    return pStart;
-}
-
-TEST( test_smallest_rangle, smallest_range )
+TEST( test_geeks_solver, smallest_range )
 {
     List **ppList = new List*[4];
     ppList[0]   = create_link_list( {4, 7, 9, 12, 15} );
@@ -56,7 +62,7 @@ TEST( test_smallest_rangle, smallest_range )
     BOOST_CHECK_EQUAL(std::get<1>(range), 8);
 }
 
-TEST( test_first_in_rotated_sorted_arr, find_first )
+TEST( test_geeks_solver, find_first )
 {
     int arr[] = {45, 56, 78, 89, 92 , 97, 4, 6, 12 , 33, 40};
     int n_index = find_first_in_rotated_sorted_array( arr, 11 );
@@ -64,8 +70,7 @@ TEST( test_first_in_rotated_sorted_arr, find_first )
         
 }
 
-
-TEST( test_level_order_spiral_traversal, spiral_traversal )
+TEST( test_geeks_solver, spiral_traversal )
 {
     std::vector<int> vec_tree_data {3, 43, 53, 64, 66, 5, 6};
 
@@ -78,7 +83,7 @@ TEST( test_level_order_spiral_traversal, spiral_traversal )
     BOOST_CHECK_EQUAL( spiral_traversal, std::string("3 53 43 64 6 5 66") ); 
 }
 
-TEST( test_find_first_min_positive, find_first )
+TEST( test_geeks_solver, find_min_positive)
 {
     int arr[8] = {2, 3, 7, 6, 8, -1, -10, 15};
     int min_positive = find_min_number_from_given_sequence(8, arr);
@@ -90,7 +95,8 @@ TEST( test_find_first_min_positive, find_first )
     min_positive = find_min_number_from_given_sequence( 5, arr_3 );
     BOOST_CHECK_EQUAL( min_positive, 2 );
 }
-TEST( test_duplicate_in_n_array, find_duplicate )
+
+TEST( test_geeks_solver, find_duplicate )
 {
     int arr[] = {1, 2, 3, 1, 3, 6, 6};  
     std::vector<int> result_vec = find_duplicate_in_n_time(7, arr);
@@ -113,3 +119,19 @@ TEST( test_duplicate_in_n_array, find_duplicate )
         iter++; iter_vec++;
     }
 }
+
+TEST( test_geeks_solver, delete_greater)
+{
+    std::vector<int> input_vec = {15, 10, 11, 5, 6, 2, 3};
+    List* p_start = create_link_list( input_vec );
+    List* p_result_list = delete_node_with_greater_on_right( p_start );
+    test_link_list( p_result_list, {15, 11, 6 ,3} );
+
+    input_vec = { 10, 20 ,30 ,40, 50 , 60 };
+    p_start =  create_link_list( input_vec );
+    p_result_list  = delete_node_with_greater_on_right( p_start );
+    test_link_list( p_result_list, { 60 } );
+}
+
+
+
