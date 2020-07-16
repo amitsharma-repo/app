@@ -8,6 +8,11 @@ project(geeks_solver)
 
  #adding libarry as libApp
  add_library(geeks_solver STATIC 
+     maximum_index.cpp
+     find_subarray_with_given_sum.cpp
+     find_sets_with_last_occurance.cpp
+     connect_node_at_same_level.cpp
+     binary_tree_utils.cpp
      utils.cpp
      delete_node_with_greater_on_right.cpp
      find_duplicate_in_n_time.cpp
