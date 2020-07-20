@@ -6,6 +6,7 @@
 #include<find_min_number_from_given_sequence.h>
 #include<find_duplicate_in_n_time.h>
 #include<delete_node_with_greater_on_right.h>
+#include<longest_valid_parantheses.h>
 #include<maximum_index.h>
 #include<iostream>
 #include<TestMain.cpp>
@@ -139,6 +140,12 @@ TEST( test_geeks_solver, maximum_index )
     std::vector<int> vec_input = {34, 8, 10, 3, 2, 80,30, 33, 1}; 
     int n_reuslt = find_max_index( vec_input ); 
     BOOST_CHECK_EQUAL( 6, n_reuslt );
+}
+TEST( test_geeks_solver, longest_valid_parantheses )
+{
+    std::string input_string = "()(((()))()()((())))(((()()())()";
+    int n_result = find_longest_valid_parantheses( input_string );
+    BOOST_CHECK_EQUAL( n_result, 18 );
 }
 
 
