@@ -9,6 +9,7 @@ project(geeks_solver)
  #adding libarry as libApp
  add_library(geeks_solver STATIC 
      find_last_element_in_complete_binary_tree.cpp
+     longest_valid_parantheses.cpp
      maximum_index.cpp
      find_subarray_with_given_sum.cpp
      find_sets_with_last_occurance.cpp
