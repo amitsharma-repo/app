@@ -8,6 +8,7 @@ project(geeks_solver)
 
  #adding libarry as libApp
  add_library(geeks_solver STATIC 
+     jumping_number.cpp
      find_last_element_in_complete_binary_tree.cpp
      longest_valid_parantheses.cpp
      maximum_index.cpp

@@ -8,6 +8,7 @@
 #include<delete_node_with_greater_on_right.h>
 #include<longest_valid_parantheses.h>
 #include<maximum_index.h>
+#include<jumping_number.h>
 #include<iostream>
 #include<TestMain.cpp>
 #include<util_struct.h>
@@ -147,6 +148,9 @@ TEST( test_geeks_solver, longest_valid_parantheses )
     int n_result = find_longest_valid_parantheses( input_string );
     BOOST_CHECK_EQUAL( n_result, 18 );
 }
-
+TEST( test_geeks_solver, jumping_number_list )
+{
+        
+}
 
 
