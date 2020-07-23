@@ -150,7 +150,13 @@ TEST( test_geeks_solver, longest_valid_parantheses )
 }
 TEST( test_geeks_solver, jumping_number_list )
 {
-        
+    std::vector<int> vec_result = find_jumping_number_list( 450 );
+    BOOST_CHECK_EQUAL( vec_result.size(), 40);    
+/*
+    std::for_each( vec_result.begin(), vec_result.end(), []( int n){
+            std::cout << n << std::endl;
+            } );
+*/
 }
 
 
