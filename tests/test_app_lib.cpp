@@ -1,5 +1,6 @@
 #pragma once
 #include<tuple>
+#include<triplet_with_zero_sum.h>
 #include<level_order_spiral_traversal.h>
 #include<find_smallest_range_from_klist.h>
 #include<find_first_in_rotated_sorted_arr.h>
@@ -157,6 +158,13 @@ TEST( test_geeks_solver, jumping_number_list )
             std::cout << n << std::endl;
             } );
 */
+}
+TEST( test_geeks_solver, triplet_with_zero_sum )
+{
+    BOOST_CHECK_EQUAL( find_triptet_with_zero_sum( { 0, -1, 2, -3, 1 } ), true );
+    BOOST_CHECK_EQUAL( find_triptet_with_zero_sum( { 1, -2, 1, 0, 5 } ), true);
+    BOOST_CHECK_EQUAL( find_triptet_with_zero_sum( { 1, 2, 1, 0, 5 } ), false);
+
 }
 
 
