@@ -1,4 +1,4 @@
-set(CMAKE_CXX_COMPILER /usr/bin/g++-7)
+set(CMAKE_CXX_COMPILER /usr/bin/g++-9)
 set(CMAKE_C_COMPILER /usr/bin/gcc)
 #set(compiler_root /usr/bin)
 #set(glibc_root /usr/bin)
