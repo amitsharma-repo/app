@@ -1,5 +1,6 @@
 #pragma once
 #include<tuple>
+#include<triplet_with_zero_sum.h>
 #include<level_order_spiral_traversal.h>
 #include<find_smallest_range_from_klist.h>
 #include<find_first_in_rotated_sorted_arr.h>
@@ -8,6 +9,7 @@
 #include<delete_node_with_greater_on_right.h>
 #include<longest_valid_parantheses.h>
 #include<maximum_index.h>
+#include<jumping_number.h>
 #include<iostream>
 #include<TestMain.cpp>
 #include<util_struct.h>
@@ -147,6 +149,22 @@ TEST( test_geeks_solver, longest_valid_parantheses )
     int n_result = find_longest_valid_parantheses( input_string );
     BOOST_CHECK_EQUAL( n_result, 18 );
 }
+TEST( test_geeks_solver, jumping_number_list )
+{
+    std::vector<int> vec_result = find_jumping_number_list( 450 );
+    BOOST_CHECK_EQUAL( vec_result.size(), 40);    
+/*
+    std::for_each( vec_result.begin(), vec_result.end(), []( int n){
+            std::cout << n << std::endl;
+            } );
+*/
+}
+TEST( test_geeks_solver, triplet_with_zero_sum )
+{
+    BOOST_CHECK_EQUAL( find_triptet_with_zero_sum( { 0, -1, 2, -3, 1 } ), true );
+    BOOST_CHECK_EQUAL( find_triptet_with_zero_sum( { 1, -2, 1, 0, 5 } ), true);
+    BOOST_CHECK_EQUAL( find_triptet_with_zero_sum( { 1, 2, 1, 0, 5 } ), false);
 
+}
 
 
