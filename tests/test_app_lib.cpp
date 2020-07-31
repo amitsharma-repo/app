@@ -80,7 +80,7 @@ TEST( test_geeks_solver, spiral_traversal )
     std::vector<int> vec_tree_data {3, 43, 53, 64, 66, 5, 6};
 
 //    std::vector<int> vec_tree_data {3, 45,9,12,78,87,99, 43, 53, 64, 66, 5, 6};
-    Node* pNode = create_binary_tree( vec_tree_data );
+    Node<int>* pNode = create_binary_tree( vec_tree_data );
     Display_tree( pNode ); 
     prettyPrintTree( pNode );
     std::string spiral_traversal;

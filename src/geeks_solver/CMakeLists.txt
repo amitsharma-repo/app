@@ -16,14 +16,14 @@ project(geeks_solver)
      find_subarray_with_given_sum.cpp
      find_sets_with_last_occurance.cpp
      connect_node_at_same_level.cpp
-     binary_tree_utils.cpp
+     #     binary_tree_utils.cpp
      utils.cpp
      delete_node_with_greater_on_right.cpp
      find_duplicate_in_n_time.cpp
      find_smallest_range_from_klist.cpp 
      shortest_reach.cpp
      find_first_in_rotated_sorted_arr.cpp 
-     level_order_spiral_traversal.cpp
+     #     level_order_spiral_traversal.cpp
      find_min_number_from_given_sequence.cpp
      )
  target_link_libraries(geeks_solver

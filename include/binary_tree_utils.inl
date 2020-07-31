@@ -60,7 +60,7 @@ Node<T>* Display_tree( Node<T>* pNode )
 }
 
 template<typename T>
- Node<T>* create_binary_tree( std::vector<int> tree_data)
+ Node<T>* create_binary_tree( std::vector<T> tree_data)
  {
      Node<T>* pRoot = new Node(tree_data[0]);
      std::for_each(tree_data.begin()+1, tree_data.end(), [&pRoot](int n_data){
