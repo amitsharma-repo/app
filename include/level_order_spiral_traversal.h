@@ -2,5 +2,7 @@
 #include<iostream>
 #include<binary_tree_utils.h>
 
-void level_order_spiral_traversal( Node* pNde, std::string& result );
+template<typename T>
+void level_order_spiral_traversal( Node<T>* pNde, std::string& result );
 
+#include<level_order_spiral_traversal.inl>
