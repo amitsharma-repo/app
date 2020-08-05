@@ -1,5 +1,6 @@
 #pragma once
 #include<tuple>
+#include<duplicate_sub_tree.h>
 #include<triplet_with_zero_sum.h>
 #include<level_order_spiral_traversal.h>
 #include<find_smallest_range_from_klist.h>
@@ -9,6 +10,7 @@
 #include<delete_node_with_greater_on_right.h>
 #include<longest_valid_parantheses.h>
 #include<maximum_index.h>
+#include<duplicate_sub_tree.h>
 #include<jumping_number.h>
 #include<iostream>
 #include<TestMain.cpp>
@@ -81,8 +83,8 @@ TEST( test_geeks_solver, spiral_traversal )
 
 //    std::vector<int> vec_tree_data {3, 45,9,12,78,87,99, 43, 53, 64, 66, 5, 6};
     Node<int>* pNode = create_binary_tree( vec_tree_data );
-    Display_tree( pNode ); 
-    prettyPrintTree( pNode );
+    //Display_tree( pNode ); 
+    //prettyPrintTree( pNode );
     std::string spiral_traversal;
     level_order_spiral_traversal( pNode, spiral_traversal );
     BOOST_CHECK_EQUAL( spiral_traversal, std::string("3 53 43 64 6 5 66") ); 
@@ -167,4 +169,11 @@ TEST( test_geeks_solver, triplet_with_zero_sum )
 
 }
 
-
+TEST( test_geeks_solver, test_dublicate_sub_tree )
+{
+    std::vector<char> input_vec_data = {'d', 'y', 'h', 'd', 'y', 'h', 'd', 'y', 'h', 'd', 'y', 'h', 'd', 'y', 'h', 'd', 'y', 'h', 'd', 'y', 'h', 'd', 'y', 'h'};
+    Node<char>* p_root_node = create_binary_tree( input_vec_data );
+    //Display_tree( p_root_node );
+    //prettyPrintTree( p_root_node ); 
+    BOOST_CHECK_EQUAL( check_duplicate_sub_tree( p_root_node ), true ); 
+}

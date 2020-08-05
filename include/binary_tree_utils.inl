@@ -63,7 +63,7 @@ template<typename T>
  Node<T>* create_binary_tree( std::vector<T> tree_data)
  {
      Node<T>* pRoot = new Node(tree_data[0]);
-     std::for_each(tree_data.begin()+1, tree_data.end(), [&pRoot](int n_data){
+     std::for_each(tree_data.begin()+1, tree_data.end(), [&pRoot](T n_data){
          add_node( pRoot, n_data );
          } );
      return pRoot;
@@ -91,7 +91,8 @@ template<typename T>
      if(node->p_right) {
          prettyPrintTree(node->p_right, prefix + (isLeft ? "│   " : "    "), false);
      }
-     std::cout << prefix + (isLeft ? "└── " : "┌── ") + std::to_string(node->n_info) + "\n";
+     std::cout << prefix + (isLeft ? "└── " : "┌── ");
+     std::cout << node->n_info << std::endl; 
  
      if (node->p_left) {
          prettyPrintTree(node->p_left, prefix + (isLeft ? "    " : "│   "), true);
