@@ -8,6 +8,10 @@ project(geeks_solver)
 
  #adding libarry as libApp
  add_library(geeks_solver STATIC 
+     reverse_digit_integer.cpp
+     binary_search_to_greater_sum.cpp
+     string_to_integer.cpp
+     pair_with_sum_from_two_subarray.cpp
      duplicate_sub_tree.cpp 
      triplet_with_zero_sum.cpp
      jumping_number.cpp

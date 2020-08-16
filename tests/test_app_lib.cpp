@@ -1,5 +1,8 @@
 #pragma once
 #include<tuple>
+#include<binary_search_to_greater_sum.h>
+#include<reverse_digit_integer.h>
+#include<string_to_integer.h>
 #include<duplicate_sub_tree.h>
 #include<triplet_with_zero_sum.h>
 #include<level_order_spiral_traversal.h>
@@ -176,4 +179,28 @@ TEST( test_geeks_solver, test_dublicate_sub_tree )
     //Display_tree( p_root_node );
     //prettyPrintTree( p_root_node ); 
     BOOST_CHECK_EQUAL( check_duplicate_sub_tree( p_root_node ), true ); 
+}
+TEST( test_geeks_solver, test_sring_to_integer )
+{
+    BOOST_CHECK_EQUAL( my_atoi( "3454"), 3454 );
+    BOOST_CHECK_EQUAL( my_atoi( "-34" ), -34 );
+    BOOST_CHECK_EQUAL( my_atoi( "34sd" ), 34 );
+    BOOST_CHECK_EQUAL( my_atoi( "    -43" ), -43);
+    BOOST_CHECK_EQUAL( my_atoi( "    43" ), 43);
+    BOOST_CHECK_EQUAL( my_atoi( "    43 with word" ), 43);
+    BOOST_CHECK_EQUAL( my_atoi( "-91283472332" ), -2147483648 );
+}
+TEST( test_geeks_solver, test_reverse_digit_integer )
+{
+    BOOST_CHECK_EQUAL( get_reverse_digit_of_integer( -1234 ), -4321 );
+    BOOST_CHECK_EQUAL( get_reverse_digit_of_integer( 4532 ), 2354 );
+    BOOST_CHECK_EQUAL( get_reverse_digit_of_integer( 1534236469 ), 0 );
+}
+TEST( test_geeks_solver, test_bst_to_gst )
+{
+    std::vector<int> input_vec_data = {1 ,7, 8, 4, 3, 7, 2, 67, 33, 13, 5};
+    Node<int>* p_root_node = create_binary_tree( input_vec_data );
+    prettyPrintTree( p_root_node ); 
+    bst_to_gst( p_root_node );
+    prettyPrintTree( p_root_node );
 }
