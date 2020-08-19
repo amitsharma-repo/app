@@ -1,5 +1,6 @@
 #pragma once
 #include<tuple>
+#include<min_flip_for_monotone_increasing.h>
 #include<binary_search_to_greater_sum.h>
 #include<reverse_digit_integer.h>
 #include<string_to_integer.h>
@@ -203,4 +204,16 @@ TEST( test_geeks_solver, test_bst_to_gst )
     prettyPrintTree( p_root_node ); 
     bst_to_gst( p_root_node );
     prettyPrintTree( p_root_node );
+}
+TEST( test_geeks_solver, test_min_flip_monotone_increasing )
+{
+    std::string input_string = "00110";
+    int n_min_result = min_flip_monotone_increasing( input_string );
+    BOOST_CHECK_EQUAL( n_min_result, 1 );
+    input_string = "010110";
+    n_min_result = min_flip_monotone_increasing( input_string );
+    BOOST_CHECK_EQUAL( n_min_result, 2 );
+    input_string = "00011000";
+    n_min_result = min_flip_monotone_increasing( input_string );
+    BOOST_CHECK_EQUAL( n_min_result, 2 );
 }
