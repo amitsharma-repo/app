@@ -8,7 +8,6 @@
 int min_flip_monotone_increasing( const std::string& input_string )
 {
     int n_size = input_string.size();
-    std::cout << "size of input string is " << n_size << std::endl;
     std::vector<int> dp0;
     dp0.reserve(n_size);
     std::vector<int> dp1;
@@ -30,7 +29,7 @@ int min_flip_monotone_increasing( const std::string& input_string )
         }
         else {
             dp0[ n_idx ] = dp0[ n_idx -1 ] + 1;
-            dp1[ n_idx ] = std::min( dp1[ n_idx -1], dp0[ n_idx -1] +1 ); 
+            dp1[ n_idx ] = std::min( dp1[ n_idx -1], dp0[ n_idx -1]  ); 
         }
     } 
     return (std::min( dp1[ n_size -1], dp0[ n_size -1] ) );
