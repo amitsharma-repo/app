@@ -8,6 +8,7 @@ project(geeks_solver)
 
  #adding libarry as libApp
  add_library(geeks_solver STATIC 
+     partition_array_into_disjoint_interval.cpp
      min_flip_for_monotone_increasing.cpp
      reverse_digit_integer.cpp
      binary_search_to_greater_sum.cpp

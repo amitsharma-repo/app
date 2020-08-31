@@ -1,5 +1,6 @@
 #pragma once
 #include<tuple>
+#include<partition_array_into_disjoint_interval.h> 
 #include<min_flip_for_monotone_increasing.h>
 #include<binary_search_to_greater_sum.h>
 #include<reverse_digit_integer.h>
@@ -216,4 +217,15 @@ TEST( test_geeks_solver, test_min_flip_monotone_increasing )
     input_string = "00011000";
     n_min_result = min_flip_monotone_increasing( input_string );
     BOOST_CHECK_EQUAL( n_min_result, 2 );
+}
+TEST( test_geeks_solver, test_partition_into_disjoint_interval )
+{
+    std::vector<int> input_data = { 5,0,3,8,6 };
+    std::cout << "{ 5,0,3,8,6 }" << std::endl;
+    int n_partition_index = find_partition_array_into_disjoint_interval( input_data );
+    BOOST_CHECK_EQUAL( n_partition_index, 3 );
+    input_data = { 1,1,1,0,6,12 };
+    std::cout << "{ 1,1,1,0,6,12 }" << std::endl;
+    n_partition_index = find_partition_array_into_disjoint_interval( input_data );
+    BOOST_CHECK_EQUAL( n_partition_index, 4 );    
 }

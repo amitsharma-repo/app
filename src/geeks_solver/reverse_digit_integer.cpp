@@ -19,7 +19,6 @@ int get_reverse_digit_of_integer( int n_value )
             return 0;
         } 
         n_return_value = n_return_value* 10 + digit;
-        std::cout << n_return_value << std::endl;
         n_value= n_value/10;
     }
     if( b_sign )
