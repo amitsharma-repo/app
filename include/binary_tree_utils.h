@@ -1,6 +1,7 @@
 #pragma once
 #include<vector>
 #include <algorithm>
+#include <string>
 //template<typename T, typename Comp = std::less>
 template< typename T, typename comp= std::less< void > >
 struct  Node                                                                    
