@@ -1,5 +1,7 @@
 #pragma once
 #include<tuple>
+#include<check_larry_array.h>
+#include<find_max_area_of_container.h>
 #include<calculate_3d_surface_area.h>
 #include<partition_array_into_disjoint_interval.h> 
 #include<min_flip_for_monotone_increasing.h>
@@ -248,4 +250,28 @@ TEST(test_geeks_solver, test_calculate_3d_surface_area )
     int nSurfaceArea = calculate_3d_surface_area(3 ,3 ,surrogate);
     BOOST_CHECK_EQUAL( nSurfaceArea, 60 );
 }
+TEST(test_geeks_solver, test_check_larry_array )
+{
+    bool result;
+    /*
+    std::vector<int> vec_input_1 = {1, 6, 5, 2, 4, 3};
+    result = check_larry_array(vec_input_1 );
+    BOOST_CHECK_EQUAL( result, true);
+    std::vector<int> vec_input_2 = {3, 1, 2};
+    result =check_larry_array(vec_input_2);
+    BOOST_CHECK_EQUAL( result, true);
+    std::vector<int> vec_input_3= {1, 3, 4, 2};
+    result = check_larry_array(vec_input_3);
+    BOOST_CHECK_EQUAL( result, true);
+    */
+    std::vector<int> vec_input_4= {1, 2, 3, 5, 4};
+    result = check_larry_array(vec_input_4);
+   // BOOST_CHECK_EQUAL( result, false);
+}
+TEST(test_geeks_solver, test_find_max_area_of_container )
+{
+    std::vector heights = {1,8,6,2,5,4,8,3,7};
+    int nMaxWater = find_max_area(heights);
+    BOOST_CHECK_EQUAL( nMaxWater, 49);
 
+}
