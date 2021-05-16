@@ -8,6 +8,9 @@ project(geeks_solver)
 
  #adding libarry as libApp
  add_library(geeks_solver STATIC 
+     letter_combination_of_phone_number.cpp
+     find_max_area_of_container.cpp
+     check_larry_array.cpp
      calculate_3d_surface_area.cpp
      partition_array_into_disjoint_interval.cpp
      min_flip_for_monotone_increasing.cpp
