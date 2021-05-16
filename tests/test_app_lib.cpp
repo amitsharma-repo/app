@@ -1,5 +1,6 @@
 #pragma once
 #include<tuple>
+#include<letter_combination_of_phone_number.h>
 #include<check_larry_array.h>
 #include<find_max_area_of_container.h>
 #include<calculate_3d_surface_area.h>
@@ -274,4 +275,17 @@ TEST(test_geeks_solver, test_find_max_area_of_container )
     int nMaxWater = find_max_area(heights);
     BOOST_CHECK_EQUAL( nMaxWater, 49);
 
+}
+TEST(test_geeks_solver, test_letter_combination_of_phone_number )
+{
+    std::string strDigit = "23";
+    std::vector<std::string> vec_result = letter_combination_of_phone_number(strDigit);
+    std::vector<std::string> vec_check_result= {"ad","ae","af","bd","be","bf","cd","ce","cf"};
+    auto iter = vec_result.begin();
+    auto iter_check = vec_check_result.begin();
+    BOOST_CHECK_EQUAL( vec_check_result.size(), vec_result.size());
+    while( iter!= vec_result.end() ) {
+        BOOST_CHECK_EQUAL( *iter, *iter_check );
+        ++iter; ++iter_check;
+    }
 }
