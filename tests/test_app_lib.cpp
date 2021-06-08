@@ -1,6 +1,8 @@
 #pragma once
 #include<tuple>
+#include<find_circular_loop.h>
 #include<letter_combination_of_phone_number.h>
+#include<generate_parantheses.h>
 #include<check_larry_array.h>
 #include<find_max_area_of_container.h>
 #include<calculate_3d_surface_area.h>
@@ -288,4 +290,60 @@ TEST(test_geeks_solver, test_letter_combination_of_phone_number )
         BOOST_CHECK_EQUAL( *iter, *iter_check );
         ++iter; ++iter_check;
     }
+}
+TEST( test_geeks_solver, test_generate_parenthesis )
+{
+    std::vector<std::string> resultParantheses;
+    resultParantheses = generateParenthesis(4);
+/*    std::vector<std::string> vec_result_parantheses = {"()()()", "(())()", "(()())", "()(())" ,"((()))"}; 
+    for(auto str: vec_result_parantheses)
+        std::cout << str << " ";
+    std::cout << "output is " << std::endl;
+    for(auto str: resultParantheses)
+        std::cout << str << " ";
+    vector<std::string>::iterator it= std::unique( resultParantheses.begin(), resultParantheses.end() );
+    bool wasUnique = (it == resultParantheses.end() );
+    std::cout << "was unique " << wasUnique << std::endl;
+    BOOST_CHECK_EQUAL( resultParantheses.size(), vec_result_parantheses.size());
+    auto iter = resultParantheses.begin();
+    auto iter_result = vec_result_parantheses.begin();
+    while( iter != resultParantheses.end() )
+    {
+        BOOST_CHECK_EQUAL( *iter, *iter_result );
+        ++iter, ++iter_result;
+    }
+    resultParantheses = generateParenthesis(1);
+    vec_result_parantheses = { "()" }; 
+    for(auto str: resultParantheses)
+        std::cout << str << std::endl;
+    BOOST_CHECK_EQUAL( resultParantheses.size(), vec_result_parantheses.size());
+    iter = resultParantheses.begin();
+    iter_result = vec_result_parantheses.begin();
+    std::sort(vec_result_parantheses.begin(), vec_result_parantheses.end());
+    std::sort(resultParantheses.begin(), resultParantheses.end());
+    while( iter != resultParantheses.end() )
+    {
+        BOOST_CHECK_EQUAL( *iter, *iter_result );
+        ++iter, ++iter_result;
+    }
+    */
+}
+TEST( test_geeks_solver, test_circular_loop )
+{
+    bool isCircularLoop;
+    std::vector<int> vec_input = {-1,-1,-1};
+    isCircularLoop = check_circular_loop(vec_input);
+    BOOST_CHECK_EQUAL( isCircularLoop, true);
+    vec_input = {-2,1,-1,-2,-2};
+    isCircularLoop = check_circular_loop(vec_input);
+    BOOST_CHECK_EQUAL( isCircularLoop, false);
+    vec_input = {-1,2};
+    isCircularLoop = check_circular_loop(vec_input);
+    BOOST_CHECK_EQUAL( isCircularLoop, false);
+    vec_input = {2,-1,1,2,2};
+    isCircularLoop = check_circular_loop(vec_input);
+    BOOST_CHECK_EQUAL( isCircularLoop, true);
+    vec_input = {2,2,2,2,2,4,7};
+    isCircularLoop = check_circular_loop(vec_input);
+    BOOST_CHECK_EQUAL( isCircularLoop, false);
 }

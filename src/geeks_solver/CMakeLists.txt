@@ -8,6 +8,8 @@ project(geeks_solver)
 
  #adding libarry as libApp
  add_library(geeks_solver STATIC 
+     find_circular_loop.cpp
+     generate_parantheses.cpp
      letter_combination_of_phone_number.cpp
      find_max_area_of_container.cpp
      check_larry_array.cpp
