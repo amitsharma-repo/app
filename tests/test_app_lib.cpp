@@ -1,5 +1,6 @@
 #pragma once
 #include<tuple>
+#include<avoid_flood_in_city.h>
 #include<find_circular_loop.h>
 #include<letter_combination_of_phone_number.h>
 #include<generate_parantheses.h>
@@ -294,7 +295,7 @@ TEST(test_geeks_solver, test_letter_combination_of_phone_number )
 TEST( test_geeks_solver, test_generate_parenthesis )
 {
     std::vector<std::string> resultParantheses;
-    resultParantheses = generateParenthesis(4);
+    //resultParantheses = generateParenthesis(4);
 /*    std::vector<std::string> vec_result_parantheses = {"()()()", "(())()", "(()())", "()(())" ,"((()))"}; 
     for(auto str: vec_result_parantheses)
         std::cout << str << " ";
@@ -346,4 +347,93 @@ TEST( test_geeks_solver, test_circular_loop )
     vec_input = {2,2,2,2,2,4,7};
     isCircularLoop = check_circular_loop(vec_input);
     BOOST_CHECK_EQUAL( isCircularLoop, false);
+}
+
+TEST( test_geeks_solver, test_avoid_flood_in_city )
+{
+    std::vector<int> vec_input = {1,2,3,4};
+    std::vector<int> result_vec;
+    std::vector<int> expected_output = {-1,-1,-1,-1};
+    std::vector<int>::iterator iter_expected = expected_output.begin();
+    result_vec = avoid_flood_in_city(vec_input);
+    std::vector<int>::iterator iter_result = result_vec.begin();
+    
+    BOOST_CHECK_EQUAL( expected_output.size(), result_vec.size());
+    while(iter_result != result_vec.end())    
+    {
+        BOOST_CHECK_EQUAL(*iter_result, *iter_expected);
+        iter_result++; iter_expected++;
+    }
+    //next test case/
+    vec_input = {1,2,0,0,2,1};
+    expected_output = {-1,-1,2,1,-1,-1};
+    result_vec = avoid_flood_in_city(vec_input);
+    iter_result = result_vec.begin();
+    iter_expected = expected_output.begin();
+    BOOST_CHECK_EQUAL( expected_output.size(), result_vec.size());
+    while(iter_result != result_vec.end())    
+    {
+        BOOST_CHECK_EQUAL(*iter_result, *iter_expected);
+        iter_result++; iter_expected++;
+    }
+    //next test case/
+    vec_input = {1,2,0,1,2};
+    expected_output = {};
+    result_vec = avoid_flood_in_city(vec_input);
+    iter_result = result_vec.begin();
+    iter_expected = expected_output.begin();
+    BOOST_CHECK_EQUAL( expected_output.size(), result_vec.size());
+    while(iter_result != result_vec.end())    
+    {
+        BOOST_CHECK_EQUAL(*iter_result, *iter_expected);
+        iter_result++; iter_expected++;
+    }
+    //next test case
+    vec_input = {69,0,0,0,69};
+    expected_output = {-1,69,1,1,-1};
+    result_vec = avoid_flood_in_city(vec_input);
+    iter_result = result_vec.begin();
+    iter_expected = expected_output.begin();
+    BOOST_CHECK_EQUAL( expected_output.size(), result_vec.size());
+    while(iter_result != result_vec.end())    
+    {
+        BOOST_CHECK_EQUAL(*iter_result, *iter_expected);
+        iter_result++; iter_expected++;
+    }
+     // next test case/
+    vec_input = {0,1,1};
+    expected_output = {};
+    result_vec = avoid_flood_in_city(vec_input);
+    iter_result = result_vec.begin();
+    iter_expected = expected_output.begin();
+    BOOST_CHECK_EQUAL( expected_output.size(), result_vec.size());
+    while(iter_result != result_vec.end())    
+    {
+        BOOST_CHECK_EQUAL(*iter_result, *iter_expected);
+        iter_result++; iter_expected++;
+    }
+    //next test case/
+    vec_input = {1,0,2,0,2,1};
+    expected_output = {-1,1,-1,2,-1,-1};
+    result_vec = avoid_flood_in_city(vec_input);
+    iter_result = result_vec.begin();
+    iter_expected = expected_output.begin();
+    BOOST_CHECK_EQUAL( expected_output.size(), result_vec.size());
+    while(iter_result != result_vec.end())    
+    {
+        BOOST_CHECK_EQUAL(*iter_result, *iter_expected);
+        iter_result++; iter_expected++;
+    }
+    //next test case
+    vec_input = {1,0,2,0,3,0,2,0,0,0,1,2,3};
+    expected_output = {-1,1,-1,2,-1,3,-1,2,1,1,-1,-1,-1};
+    result_vec = avoid_flood_in_city(vec_input);
+    iter_result = result_vec.begin();
+    iter_expected = expected_output.begin();
+    BOOST_CHECK_EQUAL( expected_output.size(), result_vec.size());
+    while(iter_result != result_vec.end())    
+    {
+        BOOST_CHECK_EQUAL(*iter_result, *iter_expected);
+        iter_result++; iter_expected++;
+    }
 }
