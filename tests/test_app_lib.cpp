@@ -1,6 +1,7 @@
 #pragma once
 #include<tuple>
 #include<avoid_flood_in_city.h>
+#include<min_jump_to_reach_home.h>
 #include<find_circular_loop.h>
 #include<letter_combination_of_phone_number.h>
 #include<generate_parantheses.h>
@@ -437,3 +438,17 @@ TEST( test_geeks_solver, test_avoid_flood_in_city )
         iter_result++; iter_expected++;
     }
 }
+
+TEST( test_geeks_solver, test_minimum_jump_to_reach_home)
+{
+    std::vector<int> vec_forbidden;
+    int n_jump_result;
+    /*vec_forbidden = {14,4,18,1,15};
+    n_jump_result = minimumJumps(vec_forbidden, 3, 15, 9);
+    BOOST_CHECK_EQUAL( n_jump_result, 3);
+    */
+    vec_forbidden = {1,6,2,14,5,17,4};
+    n_jump_result = minimumJumps(vec_forbidden, 16, 9, 7);
+    BOOST_CHECK_EQUAL( n_jump_result, 2);
+}
+
