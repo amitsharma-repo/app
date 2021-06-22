@@ -8,6 +8,7 @@ project(geeks_solver)
 
  #adding libarry as libApp
  add_library(geeks_solver STATIC 
+     populating_nxt_right_pointer.cpp
      min_jump_to_reach_home.cpp
      avoid_flood_in_city.cpp
      find_circular_loop.cpp
