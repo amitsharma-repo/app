@@ -1,5 +1,6 @@
 #pragma once
 #include<tuple>
+#include<remove_nth_node_from_end.h>
 #include<avoid_flood_in_city.h>
 #include<min_jump_to_reach_home.h>
 #include<find_circular_loop.h>
@@ -27,7 +28,7 @@
 #include<jumping_number.h>
 #include<iostream>
 #include<TestMain.cpp>
-#include<util_struct.h>
+//#include<util_struct.h>
 #include <vector>
 
 
@@ -450,5 +451,20 @@ TEST( test_geeks_solver, test_minimum_jump_to_reach_home)
     vec_forbidden = {1,6,2,14,5,17,4};
     n_jump_result = minimumJumps(vec_forbidden, 16, 9, 7);
     BOOST_CHECK_EQUAL( n_jump_result, 2);
+}
+
+TEST( test_geeks_solver, test_remove_nth_node_from_last)
+{
+    List* pInputList;
+    List* pOutputList;
+    List* pResultList;
+    pInputList = create_link_list( {4, 7, 9, 12, 15} );
+    pOutputList = create_link_list( {4, 7, 9, 15} );
+    pResultList = removeNthFromEnd( pInputList, 2 );
+    while( pOutputList == nullptr) {
+        BOOST_CHECK_EQUAL( pOutputList->n_value_, pResultList->n_value_);
+        pOutputList = pOutputList->p_next_;
+        pResultList = pResultList->p_next_;
+    }
 }
 
