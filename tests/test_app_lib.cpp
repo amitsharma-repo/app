@@ -1,6 +1,7 @@
 #pragma once
 #include<tuple>
-#include<remove_nth_node_from_end.h>
+#include<reverse_nodes_in_k_group.h>
+//#include<remove_nth_node_from_end.h>
 #include<avoid_flood_in_city.h>
 #include<min_jump_to_reach_home.h>
 #include<find_circular_loop.h>
@@ -452,7 +453,7 @@ TEST( test_geeks_solver, test_minimum_jump_to_reach_home)
     n_jump_result = minimumJumps(vec_forbidden, 16, 9, 7);
     BOOST_CHECK_EQUAL( n_jump_result, 2);
 }
-
+/*
 TEST( test_geeks_solver, test_remove_nth_node_from_last)
 {
     List* pInputList;
@@ -467,4 +468,44 @@ TEST( test_geeks_solver, test_remove_nth_node_from_last)
         pResultList = pResultList->p_next_;
     }
 }
+*/
+TEST( test_geeks_solver, reverse_nodes_in_k_group )
+{
+    List* pInputList;
+    List* pOutputList;
+    List* pResultList;
+    pInputList = create_link_list( {1,2,3,4,5} );
+    pOutputList = create_link_list( {3,2,1,4,5} );
+    pResultList = reverseKGroup(pInputList, 3);
+    while( pOutputList == nullptr) {
+        BOOST_CHECK_EQUAL( pOutputList->n_value_, pResultList->n_value_);
+        pOutputList = pOutputList->p_next_;
+        pResultList = pResultList->p_next_;
+    }
+    pInputList = create_link_list( {1} );
+    pOutputList = create_link_list( {1} );
+    pResultList = reverseKGroup(pInputList, 1);
+    while( pOutputList == nullptr) {
+        BOOST_CHECK_EQUAL( pOutputList->n_value_, pResultList->n_value_);
+        pOutputList = pOutputList->p_next_;
+        pResultList = pResultList->p_next_;
+    }
+    pInputList = create_link_list( {1,2} );
+    pOutputList = create_link_list( {2,1} );
+    pResultList = reverseKGroup(pInputList, 2);
+    while( pOutputList == nullptr) {
+        BOOST_CHECK_EQUAL( pOutputList->n_value_, pResultList->n_value_);
+        pOutputList = pOutputList->p_next_;
+        pResultList = pResultList->p_next_;
+    }
+    pInputList = create_link_list( {1,2,3,4} );
+    pOutputList = create_link_list( {2,1,4,3} );
+    pResultList = reverseKGroup(pInputList, 2);
+    while( pOutputList == nullptr) {
+        BOOST_CHECK_EQUAL( pOutputList->n_value_, pResultList->n_value_);
+        pOutputList = pOutputList->p_next_;
+        pResultList = pResultList->p_next_;
+    }
+}
+
 

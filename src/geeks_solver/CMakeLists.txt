@@ -8,6 +8,8 @@ project(geeks_solver)
 
  #adding libarry as libApp
  add_library(geeks_solver STATIC 
+     reverse_nodes_in_k_group.cpp
+     swaping_nodes_in_linklist.cpp
      remove_nth_node_from_end.cpp
      populating_nxt_right_pointer.cpp
      min_jump_to_reach_home.cpp
