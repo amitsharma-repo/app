@@ -2,6 +2,7 @@
 #include<tuple>
 #include<reverse_nodes_in_k_group.h>
 //#include<remove_nth_node_from_end.h>
+#include<search_in_rotated_array.h>
 #include<avoid_flood_in_city.h>
 #include<min_jump_to_reach_home.h>
 #include<find_circular_loop.h>
@@ -507,5 +508,15 @@ TEST( test_geeks_solver, reverse_nodes_in_k_group )
         pResultList = pResultList->p_next_;
     }
 }
+TEST( test_geeks_solver, search_in_rotated_array )
+{
+    std::vector<int> input_arr;
+    int nResult;
+    input_arr = {4,5,6,7,0,1,2};
+    nResult = search(input_arr, 0);
+    BOOST_CHECK_EQUAL( nResult, 4);
+
+}
+
 
 
