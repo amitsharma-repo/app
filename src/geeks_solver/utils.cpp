@@ -2,9 +2,10 @@
 
 void debug_print( const List* p_node )
 {
+    std::cout << "node value " << std::endl;
     while( p_node != nullptr )
     {
-        std::cout << "node value " << p_node->n_value_ << std::endl;
+        std::cout << p_node->n_value_ << " ";
         p_node = p_node->p_next_;
     }
 }     
