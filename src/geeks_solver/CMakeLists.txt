@@ -8,6 +8,7 @@ project(geeks_solver)
 
  #adding libarry as libApp
  add_library(geeks_solver STATIC 
+     find_first_and_last_position_of_element.cpp
      search_in_rotated_array.cpp
      reverse_nodes_in_k_group.cpp
      swaping_nodes_in_linklist.cpp
