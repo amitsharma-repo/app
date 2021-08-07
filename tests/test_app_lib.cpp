@@ -2,6 +2,7 @@
 #include<tuple>
 #include<reverse_nodes_in_k_group.h>
 //#include<remove_nth_node_from_end.h>
+#include<count_and_say.h>
 #include<search_in_rotated_array.h>
 #include<avoid_flood_in_city.h>
 #include<min_jump_to_reach_home.h>
@@ -517,6 +518,21 @@ TEST( test_geeks_solver, search_in_rotated_array )
     BOOST_CHECK_EQUAL( nResult, 4);
 
 }
-
+TEST( test_geeks_solver, cout_and_say )
+{
+    std::string res_count_and_say;
+    res_count_and_say = countAndSay(1);        
+    BOOST_CHECK_EQUAL( res_count_and_say, "1");
+    res_count_and_say = countAndSay(2);        
+    BOOST_CHECK_EQUAL( res_count_and_say, "11");
+    res_count_and_say = countAndSay(3);        
+    BOOST_CHECK_EQUAL( res_count_and_say, "21");
+    res_count_and_say = countAndSay(4);        
+    BOOST_CHECK_EQUAL( res_count_and_say, "1211");
+    res_count_and_say = countAndSay(5);        
+    BOOST_CHECK_EQUAL( res_count_and_say, "111221");
+    res_count_and_say = countAndSay(6);        
+    BOOST_CHECK_EQUAL( res_count_and_say, "312211");
+}
 
 
