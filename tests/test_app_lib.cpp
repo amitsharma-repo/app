@@ -1,6 +1,7 @@
 #pragma once
 #include<tuple>
 #include<reverse_nodes_in_k_group.h>
+#include<zig_zag_conversion.h>
 //#include<remove_nth_node_from_end.h>
 #include<count_and_say.h>
 #include<search_in_rotated_array.h>
@@ -533,6 +534,16 @@ TEST( test_geeks_solver, cout_and_say )
     BOOST_CHECK_EQUAL( res_count_and_say, "111221");
     res_count_and_say = countAndSay(6);        
     BOOST_CHECK_EQUAL( res_count_and_say, "312211");
+}
+TEST( test_geeks_solver, zig_zag_conversion )
+{
+    std::string res_zig_zag_conversion;
+    res_zig_zag_conversion =  zig_zag_convert("PAYPALISHIRING", 3);
+    BOOST_CHECK_EQUAL( res_zig_zag_conversion, "PAHNAPLSIIGYIR");
+    res_zig_zag_conversion =  zig_zag_convert("A", 1);
+    BOOST_CHECK_EQUAL( res_zig_zag_conversion, "A");
+    res_zig_zag_conversion =  zig_zag_convert("A", 2);
+    BOOST_CHECK_EQUAL( res_zig_zag_conversion, "A");
 }
 
 
