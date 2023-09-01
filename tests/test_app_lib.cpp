@@ -29,6 +29,10 @@
 #include<maximum_index.h>
 #include<duplicate_sub_tree.h>
 #include<jumping_number.h>
+#include<partition_list.h>
+#include<partition_smallerValue.h>
+#include<add_two_number_list.h>
+#include<rotate_list.h>
 #include<iostream>
 #include<TestMain.cpp>
 //#include<util_struct.h>
@@ -479,7 +483,7 @@ TEST( test_geeks_solver, reverse_nodes_in_k_group )
     pInputList = create_link_list( {1,2,3,4,5} );
     pOutputList = create_link_list( {3,2,1,4,5} );
     pResultList = reverseKGroup(pInputList, 3);
-    while( pOutputList == nullptr) {
+    while( pOutputList != nullptr) {
         BOOST_CHECK_EQUAL( pOutputList->n_value_, pResultList->n_value_);
         pOutputList = pOutputList->p_next_;
         pResultList = pResultList->p_next_;
@@ -487,7 +491,7 @@ TEST( test_geeks_solver, reverse_nodes_in_k_group )
     pInputList = create_link_list( {1} );
     pOutputList = create_link_list( {1} );
     pResultList = reverseKGroup(pInputList, 1);
-    while( pOutputList == nullptr) {
+    while( pOutputList != nullptr) {
         BOOST_CHECK_EQUAL( pOutputList->n_value_, pResultList->n_value_);
         pOutputList = pOutputList->p_next_;
         pResultList = pResultList->p_next_;
@@ -495,7 +499,7 @@ TEST( test_geeks_solver, reverse_nodes_in_k_group )
     pInputList = create_link_list( {1,2} );
     pOutputList = create_link_list( {2,1} );
     pResultList = reverseKGroup(pInputList, 2);
-    while( pOutputList == nullptr) {
+    while( pOutputList != nullptr) {
         BOOST_CHECK_EQUAL( pOutputList->n_value_, pResultList->n_value_);
         pOutputList = pOutputList->p_next_;
         pResultList = pResultList->p_next_;
@@ -503,7 +507,7 @@ TEST( test_geeks_solver, reverse_nodes_in_k_group )
     pInputList = create_link_list( {1,2,3,4} );
     pOutputList = create_link_list( {2,1,4,3} );
     pResultList = reverseKGroup(pInputList, 2);
-    while( pOutputList == nullptr) {
+    while( pOutputList != nullptr) {
         BOOST_CHECK_EQUAL( pOutputList->n_value_, pResultList->n_value_);
         pOutputList = pOutputList->p_next_;
         pResultList = pResultList->p_next_;
@@ -534,5 +538,88 @@ TEST( test_geeks_solver, cout_and_say )
     res_count_and_say = countAndSay(6);        
     BOOST_CHECK_EQUAL( res_count_and_say, "312211");
 }
+TEST( test_partition_list, partition_list)
+{
+  List *pInputList = create_link_list( {1,4,3,2,5,2} );
+  partition(pInputList, 3); 
+}
+TEST( test_partition_SmallerList, partitionSmaller)
+{
+  List *pInputList = create_link_list( {1,4,3,2,5,2} );
+  List *pResultList= create_link_list( {1,2,2,4,3,5} );
+  partition_smaller(pInputList, 3); 
+  while( pInputList != nullptr) {
+    BOOST_CHECK_EQUAL( pInputList->n_value_, pResultList->n_value_);
+    pInputList= pInputList->p_next_;
+    pResultList = pResultList->p_next_;
+  }
+  pInputList = create_link_list( {1,2,3} );
+  pResultList= create_link_list( {1,2,3} );
 
+  partition_smaller(pInputList, 4); 
+  while( pInputList != nullptr) {
+    BOOST_CHECK_EQUAL( pInputList->n_value_, pResultList->n_value_);
+    pInputList= pInputList->p_next_;
+    pResultList = pResultList->p_next_;
+  }
+}
+TEST( test_rotate_list, rotate_list)
+{
+  List *pInputList = create_link_list( {1,2,3,4,5} );
+  List *pResultList= create_link_list( {4,5,1,2,3} );
+  List* pNode = rotateList(pInputList, 2); 
+  while( pNode != nullptr) {
+    BOOST_CHECK_EQUAL( pNode->n_value_, pResultList->n_value_);
+    pNode = pNode->p_next_;
+    pResultList = pResultList->p_next_;
+  }
+  pInputList = create_link_list( {1,2} );
+  pResultList= create_link_list( {2,1} );
 
+  pNode = rotateList(pInputList, 99); 
+  while( pNode != nullptr) {
+    BOOST_CHECK_EQUAL( pNode->n_value_, pResultList->n_value_);
+    pNode = pNode->p_next_;
+    pResultList = pResultList->p_next_;
+  }
+}
+
+TEST( test_add_number_list, add_number_list)
+{
+  List *pInputList_1= create_link_list( {2,4,3} );
+  List *pInputList_2= create_link_list( {5,6,4} );
+
+  List *pResultList= create_link_list( {7,0,8} );
+
+  List* pNode = addTwoNumbers(pInputList_1, pInputList_2); 
+  while( pNode != nullptr) {
+    BOOST_CHECK_EQUAL( pNode->n_value_, pResultList->n_value_);
+    pNode = pNode->p_next_;
+    pResultList = pResultList->p_next_;
+  }
+  pInputList_1= create_link_list( {0} );
+  pInputList_2= create_link_list( {0} );
+
+  pResultList= create_link_list( {0} );
+
+  pNode = addTwoNumbers(pInputList_1, pInputList_2); 
+
+  while( pNode != nullptr) {
+    BOOST_CHECK_EQUAL( pNode->n_value_, pResultList->n_value_);
+    pNode = pNode->p_next_;
+    pResultList = pResultList->p_next_;
+  }
+
+  pInputList_1= create_link_list( {9,9,9,9,9,9,9} );
+  pInputList_2= create_link_list( {9,9,9,9} );
+
+  pResultList= create_link_list( {8,9,9,9,0,0,0,1} );
+
+  pNode = addTwoNumbers(pInputList_1, pInputList_2); 
+  while( pNode != nullptr) {
+    
+    BOOST_CHECK_EQUAL( pNode->n_value_, pResultList->n_value_);
+    pNode = pNode->p_next_;
+    pResultList = pResultList->p_next_;
+  }
+}

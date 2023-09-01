@@ -47,6 +47,10 @@ project(geeks_solver)
      find_first_in_rotated_sorted_arr.cpp 
      #     level_order_spiral_traversal.cpp
      find_min_number_from_given_sequence.cpp
+     partition_list.cpp
+     partition_smallerValue.cpp 
+     rotate_list.cpp
+     add_two_number_list.cpp
      )
  target_link_libraries(geeks_solver
      PRIVATE
