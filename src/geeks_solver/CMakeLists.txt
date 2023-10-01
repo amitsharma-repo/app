@@ -51,6 +51,12 @@ project(geeks_solver)
      partition_smallerValue.cpp 
      rotate_list.cpp
      add_two_number_list.cpp
+     reverse_link_list.cpp
+     sortedListToBST.cpp
+     flatten_binary_tree.cpp
+     next_rightptr_tree.cpp
+     reverse_link_list_between_position.cpp
+     LRU_Cache.cpp
      )
  target_link_libraries(geeks_solver
      PRIVATE

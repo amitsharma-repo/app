@@ -1,4 +1,5 @@
 //https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
+#include<vector>
 class Node {
 public:
     int val;
