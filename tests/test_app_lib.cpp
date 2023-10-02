@@ -39,6 +39,7 @@
 #include<flatten_binary_tree.h>
 #include<next_rightptr_tree.h>
 #include<LRU_Cache.h>
+#include<split_linked_list.h>
 #include<iostream>
 #include<TestMain.cpp>
 //#include<util_struct.h>
@@ -544,12 +545,12 @@ TEST( test_geeks_solver, cout_and_say )
     res_count_and_say = countAndSay(6);        
     BOOST_CHECK_EQUAL( res_count_and_say, "312211");
 }
-TEST( test_partition_list, partition_list)
+TEST( test_geeks_solver, partition_list)
 {
   List *pInputList = create_link_list( {1,4,3,2,5,2} );
   partition(pInputList, 3); 
 }
-TEST( test_partition_SmallerList, partitionSmaller)
+TEST( test_geeks_solver, partitionSmaller)
 {
   List *pInputList = create_link_list( {1,4,3,2,5,2} );
   List *pResultList= create_link_list( {1,2,2,4,3,5} );
@@ -569,7 +570,7 @@ TEST( test_partition_SmallerList, partitionSmaller)
     pResultList = pResultList->p_next_;
   }
 }
-TEST( test_rotate_list, rotate_list)
+TEST( test_geeks_solver, rotate_list)
 {
   List *pInputList = create_link_list( {1,2,3,4,5} );
   List *pResultList= create_link_list( {4,5,1,2,3} );
@@ -590,7 +591,7 @@ TEST( test_rotate_list, rotate_list)
   }
 }
 
-TEST( test_add_number_list, add_number_list)
+TEST( test_geeks_solver, add_number_list)
 {
   List *pInputList_1= create_link_list( {2,4,3} );
   List *pInputList_2= create_link_list( {5,6,4} );
@@ -630,7 +631,7 @@ TEST( test_add_number_list, add_number_list)
   }
 }
 
-TEST( test_reverse_link_list, reverse_link_list)
+TEST( test_geeks_solver, reverse_link_list)
 {
   List *pInputList = create_link_list( {1,2,3,4,5} );
   List *pResultList= create_link_list( {1,4,3,2,5} );
@@ -643,7 +644,7 @@ TEST( test_reverse_link_list, reverse_link_list)
   }
 }
 
-TEST( test_reverse_link_list_bw_position, reverse_link_list_bw_position)
+TEST( test_geeks_solver, reverse_link_list_bw_position)
 {
   List *pInputList = create_link_list( {1,2,3,4,5} );
   List *pResultList= create_link_list( {1,4,3,2,5} );
@@ -665,7 +666,7 @@ TEST( test_reverse_link_list_bw_position, reverse_link_list_bw_position)
   }
 }
 
-TEST( test_sortedListToBST, sortedListToBST)
+TEST( test_geeks_solver, sortedListToBST)
 {
   List *pInputList = create_link_list( {0,1,2,3,4,5} );
   TreeNode* pNode = sortedListToBST(pInputList); 
@@ -675,7 +676,7 @@ TEST( test_sortedListToBST, sortedListToBST)
     //pResultList = pResultList->p_next_;
   //}
 }
-TEST( test_flattenBST, flattenBST)
+TEST( test_geeks_solver, flattenBST)
 {
   TreeNode *pInputList = create_tree( {1,2,5,3,4,-99,6} );
   TreeNode *pResultList = create_tree({1,-99,2,-99,3,-99,4,-99,5,-99,6});
@@ -687,7 +688,7 @@ TEST( test_flattenBST, flattenBST)
   }
   */
 }
-TEST( test_next_right_ptr, nxt_right_ptr)
+TEST( test_geeks_solver, nxt_right_ptr)
 {
   NodeNxt *pInputList = nullptr;
   create_tree_ptr( {1,2,3,4,5,-99,7} , pInputList);
@@ -731,4 +732,10 @@ TEST( test_geeks_solver, lru_cache)
     pResultList = pResultList->right;
   }
   */
+}
+
+TEST( test_geeks_solver, splitList)
+{
+  List* pInputList = create_link_list({1,2,3,4,5,6,7,8,9,10});
+  std::vector<List*> vecRetList = splitListToParts(pInputList, 3);
 }

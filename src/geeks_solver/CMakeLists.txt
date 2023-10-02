@@ -57,6 +57,7 @@ project(geeks_solver)
      next_rightptr_tree.cpp
      reverse_link_list_between_position.cpp
      LRU_Cache.cpp
+     split_linked_list.cpp
      )
  target_link_libraries(geeks_solver
      PRIVATE
