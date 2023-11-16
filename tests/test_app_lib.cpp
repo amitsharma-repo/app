@@ -40,8 +40,11 @@
 #include<next_rightptr_tree.h>
 #include<LRU_Cache.h>
 #include<split_linked_list.h>
+#include<count_number_of_atoms.h>
 #include<iostream>
 #include<TestMain.cpp>
+#include<distinct_substring_of_size_n.h>
+#include<longest_nice_substring.h>
 //#include<util_struct.h>
 #include <vector>
 
@@ -734,8 +737,23 @@ TEST( test_geeks_solver, lru_cache)
   */
 }
 
-TEST( test_geeks_solver, splitList)
+TEST (test_geeks_solver, splitList)
 {
   List* pInputList = create_link_list({1,2,3,4,5,6,7,8,9,10});
   std::vector<List*> vecRetList = splitListToParts(pInputList, 3);
+}
+
+TEST (test_geeks_solver, distinctSubstring) 
+{
+  std::string sInputString = "xyzzaz";
+  int nCount = countGoodSubstrings(sInputString);
+  BOOST_CHECK_EQUAL(nCount, 1);
+  sInputString = "aababcabc";
+  nCount = countGoodSubstrings(sInputString);
+  BOOST_CHECK_EQUAL(nCount, 4);
+}
+TEST (test_geeks_solver, longestValidSubstring) 
+{
+  std::string sInputString = "YazaAay";
+  std::string sOutputString = longestNiceSubstring(sInputString);
 }

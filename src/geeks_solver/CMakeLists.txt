@@ -58,6 +58,9 @@ project(geeks_solver)
      reverse_link_list_between_position.cpp
      LRU_Cache.cpp
      split_linked_list.cpp
+     distinct_substring_of_size_n.cpp
+     longest_nice_substring.cpp
+     #count_number_of_atoms.cpp
      )
  target_link_libraries(geeks_solver
      PRIVATE
