@@ -60,6 +60,13 @@ project(geeks_solver)
      split_linked_list.cpp
      distinct_substring_of_size_n.cpp
      longest_nice_substring.cpp
+     longest_substr_without_repeat.cpp
+     jump_game.cpp
+     isValidBST.cpp
+     restoreIPAddress.cpp
+     #merge_interval.cpp
+     merge_sort_array.cpp
+     #image_rotate.cpp
      #count_number_of_atoms.cpp
      )
  target_link_libraries(geeks_solver

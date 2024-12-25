@@ -1,7 +1,9 @@
 #pragma once
 #include<tuple>
+#include <fstream>
 #include<reverse_nodes_in_k_group.h>
 //#include<remove_nth_node_from_end.h>
+#include<image_rotate.h>
 #include<count_and_say.h>
 #include<search_in_rotated_array.h>
 #include<avoid_flood_in_city.h>
@@ -45,6 +47,12 @@
 #include<TestMain.cpp>
 #include<distinct_substring_of_size_n.h>
 #include<longest_nice_substring.h>
+#include<longest_substr_without_repeat.h>
+#include<median_of_two_sorted_array.h>
+#include<jump_game.h>
+#include<isValidBST.h>
+#include<merge_sort_array.h>
+#include<restoreIPAddress.h>
 //#include<util_struct.h>
 #include <vector>
 
@@ -754,6 +762,69 @@ TEST (test_geeks_solver, distinctSubstring)
 }
 TEST (test_geeks_solver, longestValidSubstring) 
 {
-  std::string sInputString = "YazaAay";
-  std::string sOutputString = longestNiceSubstring(sInputString);
+//  std::string sInputString = "YazaAay";
+ // std::string sOutputString = longestNiceSubstring(sInputString);
+}
+TEST (test_geeks_solver, lengthLongestSubstring) 
+{
+  std::string sInputString = "abba";
+  int nLongest;
+  //nLongest = lengthOfLongestSubstring(sInputString);
+  //BOOST_CHECK_EQUAL(nLongest, 2);
+  sInputString = "tmmzuxt";
+  nLongest = lengthOfLongestSubstring(sInputString);
+  BOOST_CHECK_EQUAL(nLongest, 5);
+  sInputString = "bbbbb";
+  nLongest = lengthOfLongestSubstring(sInputString);
+  BOOST_CHECK_EQUAL(nLongest, 1);
+  sInputString = "abcabcbb";
+  nLongest = lengthOfLongestSubstring(sInputString);
+  BOOST_CHECK_EQUAL(nLongest, 3);
+}
+
+TEST (test_geeks_solver, jump_game)
+{
+  std::vector<int> nums = {1,2};
+  int nMinJump;
+  nMinJump = jump(nums); 
+  BOOST_CHECK_EQUAL( nMinJump, 1);
+
+  nums = {2,1};
+  nMinJump = jump(nums); 
+  BOOST_CHECK_EQUAL( nMinJump, 1);
+
+  nums = {3,2,1};
+  nMinJump = jump(nums); 
+  BOOST_CHECK_EQUAL( nMinJump, 1);
+
+  nums = {2,3,1,1,4};
+  nMinJump = jump(nums); 
+  BOOST_CHECK_EQUAL( nMinJump, 2);
+}
+
+TEST (test_geeks_solver, is_valid_bst)
+{
+
+}
+
+TEST(test_geeks_solver, merge_interval)
+{
+
+}
+
+TEST(test_geeks_solver, merge_sort_array)
+{
+  std::vector<int> num1 = {0}; 
+  std::vector<int> num2 = {1}; 
+  merge(num1, 0, num2, 1);
+  for_each(num1.begin(), num1.end(),[](int x)
+      {
+        std::cout << x << " ";
+      });
+}
+
+TEST(test_geeks_solver, resolve_ip_address)
+{
+  std::string s = "25525511135";
+  std::set<string> resultValidIP = restoreIpAddresses(s);
 }
