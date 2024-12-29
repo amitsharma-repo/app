@@ -44,7 +44,7 @@
 #include<split_linked_list.h>
 #include<count_number_of_atoms.h>
 #include<iostream>
-#include<TestMain.cpp>
+#include<TestMain.h>
 #include<distinct_substring_of_size_n.h>
 #include<longest_nice_substring.h>
 #include<longest_substr_without_repeat.h>
@@ -817,10 +817,6 @@ TEST(test_geeks_solver, merge_sort_array)
   std::vector<int> num1 = {0}; 
   std::vector<int> num2 = {1}; 
   merge(num1, 0, num2, 1);
-  for_each(num1.begin(), num1.end(),[](int x)
-      {
-        std::cout << x << " ";
-      });
 }
 
 TEST(test_geeks_solver, resolve_ip_address)
