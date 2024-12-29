@@ -9,6 +9,7 @@ include(cmake/project_Setting.cmake)
 # proejct wide setup
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
 include(Test)
+include(CTest)
 
 if (NOT DEFINED CMAKE_CXX_STANDARD)
 	set(CMAKE_CXX_STANDARD 17)
@@ -19,7 +20,7 @@ option(BUILD_SHARED_LIBS
 	"build all libarry as shared libraries instead of static" ON)
 
 option(TEST_APP "Enable APP unit tests" ON)
-option(USE_GOOGLE_TEST "Enable Google tests" OFF)                               
+option(USE_GOOGLE_TEST "Enable Google tests" ON)                               
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
 set(CORE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../core)
@@ -31,5 +32,6 @@ if(TEST_APP OR CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
 endif()
 
 add_subdirectory(src)
+add_subdirectory(external)
 add_subdirectory(dependencies)
 
