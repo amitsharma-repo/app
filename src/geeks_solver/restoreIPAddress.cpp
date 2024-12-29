@@ -61,45 +61,39 @@ void recuseValidIPAddr(char ch, vector<DPValidAddress>& vecDP, int nIdx)
     //populating firstSubset
     {
         vecNxt = vecDP[nIdx +1].firstSubset;
-        std::cout << "Populating first Subset of Index " << nIdx << " with char value " << ch <<  std::endl;
         updateNewSubnet(vecDP[nIdx].firstSubset, vecNxt, ch);
-        printSubnet(vecDP[nIdx].firstSubset);
+       // printSubnet(vecDP[nIdx].firstSubset);
     }
     //populating secondSubset
     {
         vecNxt = vecDP[nIdx +1].secondSubset;
         vecDiag = vecDP[nIdx +1].firstSubset;
-        std::cout << "Populating second Subset of Index " << nIdx << " with char value " << ch <<  std::endl;
         addNewSubnet(vecDP[nIdx].secondSubset, vecDiag, ch);
         updateNewSubnet(vecDP[nIdx].secondSubset, vecNxt, ch);
-        printSubnet(vecDP[nIdx].secondSubset);
+        //printSubnet(vecDP[nIdx].secondSubset);
     }
     //populating thirdSubset
     {
         vecNxt = vecDP[nIdx +1].thirdSubset;
         vecDiag = vecDP[nIdx +1].secondSubset;
-        std::cout << "Populating third Subset of Index " << nIdx << " with char value " << ch <<  std::endl;
         addNewSubnet(vecDP[nIdx].thirdSubset, vecDiag, ch);
         updateNewSubnet(vecDP[nIdx].thirdSubset, vecNxt, ch);
-        printSubnet(vecDP[nIdx].thirdSubset);
+        //printSubnet(vecDP[nIdx].thirdSubset);
     }
     //populating forthSubset
     {
         vecNxt = vecDP[nIdx +1].forthSubset;
         vecDiag = vecDP[nIdx +1].thirdSubset;
-        std::cout << "Populating forth Subset of Index " << nIdx << " with char value " << ch <<  std::endl;
         addNewSubnet(vecDP[nIdx].forthSubset, vecDiag, ch);
         updateNewSubnet(vecDP[nIdx].forthSubset, vecNxt, ch);
-        printSubnet(vecDP[nIdx].forthSubset);
+        //printSubnet(vecDP[nIdx].forthSubset);
     }
 }
 
 std::set<std::string> restoreIpAddresses(std::string s) {
     std::vector<DPValidAddress> vecDP;
     vecDP.resize(s.size());
-    std::cout << "input value is " << s << std::endl;
     string str{s[s.size()-1]};
-    std::cout << str <<std::endl;
     vecDP[s.size()-1].firstSubset.insert(str);
     for (int nIdx = s.size() -2; nIdx >= 0; nIdx--)
     {
