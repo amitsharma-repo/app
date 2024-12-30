@@ -21,6 +21,13 @@ option(BUILD_SHARED_LIBS
 
 option(TEST_APP "Enable APP unit tests" ON)
 option(USE_GOOGLE_TEST "Enable Google tests" ON)                               
+
+if(USE_GOOGLE_TEST)
+	add_definitions( -DUSE_GOOGLE_TEST=1 )                             
+else()
+	add_definitions( -DUSE_GOOGLE_TEST=0 )                             
+endif()
+
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
 set(CORE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../core)
