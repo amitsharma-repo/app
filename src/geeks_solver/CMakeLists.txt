@@ -66,6 +66,13 @@ project(geeks_solver)
      restoreIPAddress.cpp
      #merge_interval.cpp
      merge_sort_array.cpp
+     remove_dublicate.cpp
+     remove_element.cpp
+     remove_dublicate_sorted.cpp
+     majority_element.cpp
+     rotate_array.cpp
+     max_profit.cpp
+     max_profit_once.cpp
      #image_rotate.cpp
      #count_number_of_atoms.cpp
      )

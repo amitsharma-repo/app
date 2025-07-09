@@ -1,6 +1,10 @@
 #pragma once
 #include<tuple>
 #include <fstream>
+#include<iostream>
+
+#include<TestMain.h>
+
 #include<reverse_nodes_in_k_group.h>
 //#include<remove_nth_node_from_end.h>
 #include<image_rotate.h>
@@ -43,8 +47,6 @@
 #include<LRU_Cache.h>
 #include<split_linked_list.h>
 #include<count_number_of_atoms.h>
-#include<iostream>
-#include<TestMain.h>
 #include<distinct_substring_of_size_n.h>
 #include<longest_nice_substring.h>
 #include<longest_substr_without_repeat.h>
@@ -53,6 +55,13 @@
 #include<isValidBST.h>
 #include<merge_sort_array.h>
 #include<restoreIPAddress.h>
+#include<remove_dublicate.h>
+#include<remove_element.h>
+#include<remove_dublicate_sorted.h>
+#include<majority_element.h>
+#include<rotatate_array.h>
+#include<max_profit_once.h>
+#include<max_profit.h>
 //#include<util_struct.h>
 #include <vector>
 
@@ -257,11 +266,9 @@ TEST( test_geeks_solver, test_min_flip_monotone_increasing )
 TEST( test_geeks_solver, test_partition_into_disjoint_interval )
 {
     std::vector<int> input_data = { 5,0,3,8,6 };
-    std::cout << "{ 5,0,3,8,6 }" << std::endl;
     int n_partition_index = find_partition_array_into_disjoint_interval( input_data );
     BOOST_CHECK_EQUAL( n_partition_index, 3 );
     input_data = { 1,1,1,0,6,12 };
-    std::cout << "{ 1,1,1,0,6,12 }" << std::endl;
     n_partition_index = find_partition_array_into_disjoint_interval( input_data );
     BOOST_CHECK_EQUAL( n_partition_index, 4 );    
 }
@@ -823,4 +830,63 @@ TEST(test_geeks_solver, resolve_ip_address)
 {
   std::string s = "25525511135";
   std::set<string> resultValidIP = restoreIpAddresses(s);
+}
+TEST(test_geeks_solver, remove_dublicate)
+{
+  //std::vector<int> nums = {0,0,1,1,1,1,2,3,3,3,4,4,5,5};
+  //std::vector<int> nums = {0,0,1,1,1,1,2,3,3};
+  std::vector<int> nums = {1,1,1};
+ // std::vector<int> nums ={1,1,1,2,2,3};
+  //std::vector<int> nums = {0,0,0,0,0,1,2,2,3,3,4,4};
+  int nShift  =  removeDuplicates(nums);
+  std::cout << "shift are " << nShift << std::endl;
+
+  std::for_each(nums.begin(), nums.end(), [](int x){
+      std::cout << " " << x ;
+      })
+  BOOST_CHECK_EQUAL(nShift, 4);
+
+}
+TEST(test_geeks_solver, remove_element)
+{
+  std::vector<int> nums = {1, 33 };
+  int nVal = 2;
+  int nSize = removeElement(nums, nVal);
+  BOOST_CHECK_EQUAL(nSize, 4);
+}
+
+TEST(test_geeks_solver, remove_element_sorted)
+{
+  std::vector<int> nums = {1,1,2};
+  int nSize = removeDuplicatesSorted(nums);
+  for_each(nums.begin(), nums.end(), [](int x)
+      {
+        std::cout << x << " "; 
+      });
+  BOOST_CHECK_EQUAL(nSize , 1);
+}
+
+TEST(test_geeks_solver, majority_element)
+{
+  std::vector<int> nums = {8,8,7,7,7};
+  int nElement = majorityElement(nums);
+  EXPECT_EQ(nElement, 3);
+}
+
+TEST(test_geeks_solver, rotate_array)
+{
+  std::vector<int> nums = {3, 5, 12, 6, 8,43, 19};
+  rotate(nums, 4);
+}
+
+TEST(test_geeks_solver, buy_sell_stock_1)
+{
+  std::vector<int> prices = { 7,1,5,3,6,4 };
+  int nProfit = maxProfitOnce(prices);
+}
+
+TEST(test_geeks_solver, buy_sell_stock_2)
+{
+  std::vector<int> prices = { 7,1,5,3,6,4 };
+  int nProfit  = maxProfit(prices);
 }
