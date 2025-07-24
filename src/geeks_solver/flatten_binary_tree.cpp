@@ -1,4 +1,3 @@
-#include<flatten_binary_tree.h>
 #include<util_struct.h>
 
     TreeNode* attachNode(TreeNode* pHead, TreeNode* pLeft, TreeNode* pRight)

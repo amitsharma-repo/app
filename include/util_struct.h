@@ -23,6 +23,7 @@ struct TreeNode {
 
 void debug_print( const List* p_node );
 List* create_link_list(const std::vector<int>& vec_data);
-
+bool swap(List *& pNode, List *& pNxt_node) ;
 void debug_print(const TreeNode* pNode);
 TreeNode* create_tree(const std::vector<int>& vec_data);
+TreeNode* make_clone(TreeNode* pNode);

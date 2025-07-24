@@ -1,6 +1,5 @@
 #include<tuple>
 #include<vector>
-#include<find_smallest_range_from_klist.h>
 #include<util_struct.h>
 #include<algorithm>
 #include<iostream>
@@ -31,7 +30,7 @@ int main()
     ppList[1]   = create_link_List( {0, 8 ,10 , 14 , 20} );
     ppList[2]   = create_link_List( {6 ,12 ,16, 30 , 50} );
     
-   std::tuple<int,int> range= find_smallest_range(3, ppList);
+   std::tuple<int,int> range;//= find_smallest_range(3, ppList);
     std::cout << get<0>(range) <<std::endl; 
 	std::cout <<get<1>(range) << std::endl;
 }

@@ -8,7 +8,18 @@ void debug_print( const List* p_node )
         std::cout << p_node->n_value_ << " ";
         p_node = p_node->p_next_;
     }
-}     
+}   
+
+bool swap(List *& pNode, List *& pNxt_node) 
+{
+    if(pNxt_node == nullptr)
+        return false;
+    List* pTempNode = pNxt_node->p_next_;
+    pNxt_node->p_next_ = pNode;
+    pNode = pNxt_node;
+    pNxt_node = pTempNode;
+    return true;
+}
 
 List* create_link_list(const std::vector<int>& vec_data)                        
 {                                                                               
@@ -27,7 +38,23 @@ List* create_link_list(const std::vector<int>& vec_data)
             });                                                                 
                                                                                 
     return pStart;                                                              
-}            
+}   
+
+TreeNode* make_clone(TreeNode* pNode)
+{         
+    if(pNode == nullptr)
+        return nullptr;
+    TreeNode* pNewNode = new TreeNode(pNode->val);
+    if (pNode->left != nullptr)
+    {
+        pNewNode->left = make_clone(pNode->left);
+    }
+    if (pNode->right != nullptr)
+    {
+        pNewNode->right = make_clone(pNode->right);
+    }
+    return pNewNode;
+}
 
 void debug_print( const TreeNode* pNode)
 {

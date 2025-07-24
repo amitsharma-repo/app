@@ -1,6 +1,7 @@
 #pragma once
 #include <level_order_spiral_traversal.h>
 #include <queue>
+/*
 std::string trim(const std::string& str,
                  const std::string& whitespace = " \t")
 {
@@ -13,7 +14,7 @@ std::string trim(const std::string& str,
 
     return str.substr(strBegin, strRange);
 }
-
+*/
 template< typename T>
 void at_each_level( Node<T>* pNode, int n_level, std::string& str_result, bool b_orient )
 {
@@ -40,14 +41,3 @@ void at_each_level( Node<T>* pNode, int n_level, std::string& str_result, bool b
     }
 }
 
-template<typename T>
-void level_order_spiral_traversal( Node<T>* pNode, std::string& result )
-{
-    int nHeight = get_height( pNode );
-    bool b_orient = false;
-    for(int n_level =0 ; n_level < nHeight; ++n_level)  {
-        at_each_level( pNode, n_level, result, b_orient );
-        b_orient = !b_orient;
-    }
-   result = trim(result); 
-}

@@ -7,6 +7,6 @@ set(CMAKE_C_COMPILER /usr/bin/gcc)
 #set(CMAKE_C_COMPILER ${compiler_root}/gcc)
 #set(CMAKE_CXX_COMPILER ${compiler_root}/g++-7)
 #set(CMAKE_EXE_LINKER_FLAGS_INIT "-WL, -rpath, ${glibc_root}/lib:${compiler_root}/lib64:/usr/lib64")
-
+#set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
 #set(BOOST_INCLUDEDIR )
 #set(BOOST_LIBRARYDIR )
