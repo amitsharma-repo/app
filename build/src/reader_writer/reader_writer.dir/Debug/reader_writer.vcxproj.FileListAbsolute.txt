@@ -1,2 +1,0 @@
-C:\Users\erabs\Drive Data\MY_STUFF\develop\app\build\src\reader_writer\Debug\reader_writer.pdb
-C:\Users\erabs\Drive Data\MY_STUFF\develop\app\build\src\reader_writer\reader_writer.dir\Debug\reader_writer.pdb
