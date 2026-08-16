@@ -1,0 +1,22 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/cmake_install.cmake",
+		"C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/tests/cmake_install.cmake",
+		"C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/src/cmake_install.cmake",
+		"C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/src/application/cmake_install.cmake",
+		"C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/src/geeks_solver/cmake_install.cmake",
+		"C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/src/reader_writer/cmake_install.cmake",
+		"C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/external/cmake_install.cmake",
+		"C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/external/googletest/cmake_install.cmake",
+		"C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/external/googletest/googlemock/cmake_install.cmake",
+		"C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/external/googletest/googletest/cmake_install.cmake",
+		"C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/dependencies/cmake_install.cmake",
+		"C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/dependencies/core/cmake_install.cmake",
+		"C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/_deps/core-build/cmake_install.cmake",
+		"C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/_deps/core-build/src/cmake_install.cmake",
+		"C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/_deps/core-build/src/core/cmake_install.cmake",
+		"C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/_deps/core-build/src/testMain/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

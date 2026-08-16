@@ -1,0 +1,10 @@
+^C:\USERS\ERABS\DRIVE DATA\MY_STUFF\DEVELOP\APP\SRC\GEEKS_SOLVER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/erabs/Drive Data/MY_STUFF/develop/app" "-BC:/Users/erabs/Drive Data/MY_STUFF/develop/app/build" --check-stamp-file "C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/src/geeks_solver/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

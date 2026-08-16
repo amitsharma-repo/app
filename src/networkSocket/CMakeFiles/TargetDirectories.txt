@@ -1,0 +1,5 @@
+/Users/samsha/Personal/develop/app/src/networkSocket/CMakeFiles/edit_cache.dir
+/Users/samsha/Personal/develop/app/src/networkSocket/CMakeFiles/rebuild_cache.dir
+/Users/samsha/Personal/develop/app/src/networkSocket/server/CMakeFiles/server.dir
+/Users/samsha/Personal/develop/app/src/networkSocket/server/CMakeFiles/edit_cache.dir
+/Users/samsha/Personal/develop/app/src/networkSocket/server/CMakeFiles/rebuild_cache.dir

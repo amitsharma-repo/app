@@ -16,7 +16,6 @@
 #include <string>
 #include <limits>
 #include <cstdint>
-#include <pthread.h>
 #include <unordered_set>
 #include <queue>
 #include <stack>
@@ -1312,13 +1311,28 @@ std::vector<std::pair<int, int>> GeekSolver::find_pair_with_sum(std::vector<int>
     std::vector<std::pair<int, int>> vec_result;
     std::sort(first_array.begin(), first_array.end());
     std::sort(second_array.begin(), second_array.end());
-    int i = 0;
-    int j = second_array.size() - 1;
-    for (; i < first_array.size() && j > 0;)
+
+    int left = 0;
+    int right = static_cast<int>(second_array.size()) - 1;
+    while (left < static_cast<int>(first_array.size()) && right >= 0)
     {
-        i++;
-        j--;
+        int sum = first_array[left] + second_array[right];
+        if (sum == 0)
+        {
+            vec_result.emplace_back(first_array[left], second_array[right]);
+            ++left;
+            --right;
+        }
+        else if (sum < 0)
+        {
+            ++left;
+        }
+        else
+        {
+            --right;
+        }
     }
+    return vec_result;
 }
 
 void GeekSolver::create_tree_ptr(const std::vector<int> &vec_data, NodeNxt *&pRoot)
@@ -2064,34 +2078,31 @@ std::tuple<int, int> GeekSolver::find_smallest_range(int nList_cnt, List **pplis
 std::vector<int> GeekSolver::find_sets_with_last_occurance(std::vector<char> vec_occurance)
 {
     std::vector<int> vec_result;
-    std::vector<int> vec_start;
-    vec_start.reserve(26);
-    std::vector<int> vec_end;
-    vec_end.reserve(26);
-    int n_idx = 0;
-    while (n_idx < vec_occurance.size())
+    if (vec_occurance.empty())
     {
-        vec_end[vec_occurance[n_idx] - 97] = n_idx;
-        n_idx++;
+        return vec_result;
     }
-    int n_max = vec_end[vec_occurance[0] - 97];
-    int n_start = 0;
-    int n_nxt = 1;
-    while (n_nxt < vec_occurance.size())
+
+    std::vector<int> vec_end(26, -1);
+    for (size_t i = 0; i < vec_occurance.size(); ++i)
     {
-        while (n_nxt < n_max)
+        if (vec_occurance[i] >= 'a' && vec_occurance[i] <= 'z')
         {
-            if (vec_end[vec_occurance[n_nxt] - 97] > n_max)
-            {
-                n_max = vec_end[vec_occurance[n_nxt] - 97];
-            }
-            n_nxt++;
+            vec_end[vec_occurance[i] - 'a'] = static_cast<int>(i);
         }
-        vec_result.push_back(n_max - n_start);
-        n_start = n_nxt + 1;
-        n_max = vec_end[vec_occurance[n_start] - 97];
-        n_nxt++;
     }
+
+    int n_last = 0;
+    for (int i = 0; i < 26; ++i)
+    {
+        if (vec_end[i] >= 0)
+        {
+            n_last = std::max(n_last, vec_end[i]);
+        }
+    }
+
+    vec_result.push_back(n_last + 1);
+    return vec_result;
 }
 
 // find minimum positive element missing in the unsorted array with positive and

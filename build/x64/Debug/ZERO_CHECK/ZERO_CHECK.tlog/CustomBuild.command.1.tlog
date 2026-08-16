@@ -1,0 +1,10 @@
+^C:\USERS\ERABS\DRIVE DATA\MY_STUFF\DEVELOP\APP\BUILD\CMAKEFILES\60FCD28EC99A293143C6051BAF9E2F64\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/erabs/Drive Data/MY_STUFF/develop/app" "-BC:/Users/erabs/Drive Data/MY_STUFF/develop/app/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/app.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

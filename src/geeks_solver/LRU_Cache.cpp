@@ -1,4 +1,5 @@
 #include<iostream>
+#include <algorithm>
 #include<LRU_Cache.h>
 
 struct ListNode
@@ -28,7 +29,7 @@ void print_cache( std:: map<int, std::pair<ListNode*, ListNode*>>& map_Cache)
 {
   std::cout << std::endl;
   std::cout << " cache map with size : " <<  map_Cache.size() << std::endl;
-   for_each( map_Cache.begin(), map_Cache.end(), [&]( std::pair<int, std::pair<ListNode*, ListNode*>> it)
+   std::for_each( map_Cache.begin(), map_Cache.end(), [&]( std::pair<int, std::pair<ListNode*, ListNode*>> it)
        {
           if(it.second.first != nullptr)
           {

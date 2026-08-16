@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/tests/test_reader_writer_e50c2a53_Release_tests.cmake")
+  include("C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/tests/test_reader_writer_e50c2a53_Release_tests.cmake")
+else()
+  add_test(test_reader_writer_NOT_BUILT test_reader_writer_NOT_BUILT)
+endif()

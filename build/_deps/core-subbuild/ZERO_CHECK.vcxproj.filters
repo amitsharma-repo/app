@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\erabs\Drive Data\MY_STUFF\develop\app\build\_deps\core-subbuild\CMakeFiles\3b6e75b993300843ab8e1218641035ce\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{80AFD5B2-EB0C-3021-B94E-83E64D476D0E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

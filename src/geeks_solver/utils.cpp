@@ -63,37 +63,35 @@ void debug_print( const TreeNode* pNode)
 
 TreeNode* create_tree(const std::vector<int>& vec_data)
 {
-  //need to create tree from level-order  traversal
-  TreeNode* pNode = new TreeNode(vec_data[0]);
-  int height = log2(vec_data.size()+1);
-  int nDepth = 0;
-  std::queue<TreeNode*> queueTree;
-  queueTree.push(pNode);
-  while (!queueTree.empty())
-  {
-    pNode = queueTree.front();
-    queueTree.pop();
-    if( pNode != nullptr && nDepth < height)
+    if (vec_data.empty() || vec_data[0] == -99)
     {
-      int nLeftIndex = 2*nDepth + 1;
-      int nRightIndex = 2*nDepth + 2;
-      TreeNode* pLeft = nullptr;
-      TreeNode* pRight = nullptr;
-      if(vec_data[nLeftIndex] != -99)
-      {
-        pLeft = new TreeNode(vec_data[nLeftIndex]);
-      }
-
-      if(vec_data[nRightIndex]!= -99)
-      {
-        pRight = new TreeNode(vec_data[nRightIndex]); 
-      }
-
-      queueTree.push(pLeft);
-      queueTree.push(pRight);
-      pNode->left = pLeft;
-      pNode->right = pRight;
-      nDepth++;
+        return nullptr;
     }
-  }
+
+    std::queue<TreeNode*> queueTree;
+    TreeNode* pRoot = new TreeNode(vec_data[0]);
+    queueTree.push(pRoot);
+    std::size_t index = 1;
+
+    while (!queueTree.empty() && index < vec_data.size())
+    {
+        TreeNode* pNode = queueTree.front();
+        queueTree.pop();
+
+        if (index < vec_data.size() && vec_data[index] != -99)
+        {
+            pNode->left = new TreeNode(vec_data[index]);
+            queueTree.push(pNode->left);
+        }
+        ++index;
+
+        if (index < vec_data.size() && vec_data[index] != -99)
+        {
+            pNode->right = new TreeNode(vec_data[index]);
+            queueTree.push(pNode->right);
+        }
+        ++index;
+    }
+
+    return pRoot;
 }

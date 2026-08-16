@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/samsha/Personal/develop/app/src/networkSocket/cmake_install.cmake",
+		"/Users/samsha/Personal/develop/app/src/networkSocket/server/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

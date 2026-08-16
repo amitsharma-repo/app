@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/tests/test_dsa_problems_e50c2a53_RelWithDebInfo_tests.cmake")
+  include("C:/Users/erabs/Drive Data/MY_STUFF/develop/app/build/tests/test_dsa_problems_e50c2a53_RelWithDebInfo_tests.cmake")
+else()
+  add_test(test_dsa_problems_NOT_BUILT test_dsa_problems_NOT_BUILT)
+endif()
